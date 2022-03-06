@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>微分方程组 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <description>Recent content in 微分方程组 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 23 Jan 2022 14:05:11 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>微分方程组与线性微分方程组</title>
+        <link>https://rhosta.github.io/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <pubDate>Sun, 23 Jan 2022 14:05:11 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;h2 id=&#34;微分方程组&#34;&gt;微分方程组&lt;/h2&gt;
+&lt;h3 id=&#34;从标量到向量&#34;&gt;从标量到向量&lt;/h3&gt;
+&lt;p&gt;$$
+\begin{cases}\frac{dx}{dt}=f(t,x)\newline
+x|&lt;em&gt;{t=0}=x_0\end{cases}
+\Rightarrow
+\begin{cases}\frac{d\vec x}{dt}=\vec f(t,\vec x)\newline
+\vec x|&lt;/em&gt;{t=0}=\vec x_0\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;即&lt;/p&gt;
+&lt;p&gt;$$
+\begin{cases}\frac{dx_1}{dt}=f_1(t,x_1,x_2,\cdots,x_n)\newline
+\frac{dx_2}{dt}=f_2(t,x_1,x_2,\cdots,x_n)\newline
+\cdots\newline
+\frac{dx_n}{dt}=f_n(t,x_1,x_2,\cdots,x_n)\end{cases}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;n阶微分方程特定一阶微分方程组的等价性&#34;&gt;n阶微分方程&lt;strong&gt;特定&lt;/strong&gt;一阶微分方程组的等价性&lt;/h3&gt;
+&lt;p&gt;$$
+\frac{d^nx}{dt^n}=f(t,x,\frac{dx}{dt},\cdots,\frac{d^{n-1}x}{dt^{n-1}})
+\Leftrightarrow
+\begin{cases}x_2=\frac{dx_1}{dt}\newline
+x_3=\frac{dx_2}{dt}\newline
+\cdots\newline
+x_n=\frac{dx_{n-1}}{dt}\newline
+\frac{dx_n}{dt}=f(t,x_1,x_2,\cdots,x_n-1,x_n)\end{cases}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;线性微分方程组的一般概念&#34;&gt;线性微分方程组的一般概念&lt;/h2&gt;
+&lt;h3 id=&#34;标准形式&#34;&gt;标准形式&lt;/h3&gt;
+&lt;p&gt;$$
+\frac{d\vec x}{dt}=\overline{\overline{A}}(t)\vec x+\vec f(t)\newline
+$$&lt;/p&gt;
+&lt;p&gt;其中$\overline{\overline{A}}={a(t)&lt;em&gt;{i,j}}&lt;/em&gt;{i,j=1}^n$是不依赖$\vec x$的$n\times n$的系数矩阵，$\vec x$是n维列向量。&lt;/p&gt;
+&lt;p&gt;当$f(t)\equiv 0$时，方程为齐次线性方程组，否则为非齐次线性方程组。&lt;/p&gt;
+&lt;h2 id=&#34;线性微分方程组解的一般理论&#34;&gt;线性微分方程组解的一般理论&lt;/h2&gt;
+&lt;p&gt;与高阶线性方程组解的理论类似，包括：线性无关性、朗斯基行列式、通解结构定理。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

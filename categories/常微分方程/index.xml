@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>常微分方程 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <description>Recent content in 常微分方程 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 13 Feb 2022 13:39:51 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>K1,K2的证明（未完成）</title>
+        <link>https://rhosta.github.io/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
+        <pubDate>Sun, 13 Feb 2022 13:39:51 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
+        <description>&lt;h2 id=&#34;预备知识&#34;&gt;预备知识&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;万有引力&lt;/strong&gt; $\vec F=-\dfrac{GMm}{r^2}\hat r$。其中$\hat r$为以恒星为原点极坐标系中的径向单位向量，在两质点连线上。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;牛顿第二运动定律&lt;/strong&gt; $\vec F=m\vec a=m\dfrac{d^2\vec r}{dt^2}$。其中$\vec r$为位置向量，$\vec r=r\hat r=[r\cos\theta,r\sin\theta]$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;极坐标&lt;/strong&gt;
+$$
+\hat r=[\cos\theta,\sin\theta],\hat\theta=[-\sin\theta,\cos\theta]\newline
+\dot{\hat r}=\frac{d\hat r}{dt}=\dot\theta\hat\theta\newline
+\dot{\hat\theta}=\frac{d\hat\theta}{dt}=-\dot\theta\hat r
+$$&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>常系数线性微分方程组的解法</title>
+        <link>https://rhosta.github.io/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/</link>
+        <pubDate>Tue, 25 Jan 2022 13:39:51 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/</guid>
+        <description>&lt;p&gt;所谓常系数线性微分方程组即$\overline{\overline{A}}(t)=\overline{\overline{A}}$。&lt;/p&gt;
+&lt;h2 id=&#34;常系数齐次线性微分方程组&#34;&gt;常系数齐次线性微分方程组&lt;/h2&gt;
+&lt;p&gt;标准形式为$\frac{d\vec x}{dt}=\overline{\overline{A}}\vec x$ ，转化为求特征结构问题。&lt;/p&gt;
+&lt;p&gt;设存在解$\vec x(t)=\vec ve^{\lambda t}$，$\vec v$是待定常向量，则$\frac{d\vec x}{dt}=\lambda\vec ve^{\lambda t}$，即$\overline{\overline{A}}\vec v=\lambda\vec v$。&lt;/p&gt;
+&lt;p&gt;由此知$\lambda$为矩阵特征值，$\vec v$为对应特征向量，具体情形如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;【重点】若$\overline{\overline{A}}$的所有特征根都为单根，记为$\lambda_1,\lambda_2,\cdots,\lambda_n$，对应的n个线性无关（由不同特征值对应特征向量的线性无关性保证） 解${\vec v_i}_ {i=1}^n$构成一个&lt;strong&gt;基本解组&lt;/strong&gt;，则原一阶线性方程组通解为&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+\vec x(t)=\sum_{i=1}^nc_i\vec v_ie^{\lambda_i t}=(\vec v_1e^{\lambda_1},\vec v_2e^{\lambda_2},\cdots,\vec v_ne^{\lambda_n})\vec c
+$$&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://rhosta.github.io/2022/01/20/%e4%ba%8c%e9%98%b6%e5%b8%b8%e7%b3%bb%e6%95%b0%e7%ba%bf%e6%80%a7%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e8%a7%a3&#34; &gt;比较&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;如特征根为复数单根（必成对出现），互为共轭的特征根对应特征向量也互为共轭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如特征根特征根为重根，设$\lambda_0$是k重特征根，则对应基本解的形式为&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+\vec x^{(i)}(t)=(\vec v_0^{(i)}+\frac{t}{1!}\vec v_1^{(i)}+\frac{t^2}{2!}\vec v_2^{(i)}+\cdots+\frac{t^{k-1}}{(k-1)!}\vec v_{k-1}^{(i)})e^{\lambda_0 t}\newline
+i=1,2,\cdots,k
+$$&lt;/p&gt;
+&lt;p&gt;其中的$\vec v_0^{(i)}$是$\lambda_0$对应的第$i$个&lt;strong&gt;广义特征向量&lt;/strong&gt;（即方程$(\overline{\overline A}-\lambda_0\overline{\overline{I}})^k\vec v=\vec 0$的一组解，之间线性无关），且&lt;/p&gt;
+&lt;p&gt;$$
+\vec v_j^{(i)}=(\overline{\overline{A}}-\lambda_0\overline{\overline I})\vec v_{j-1}^{(i)},j&amp;gt;0
+$$&lt;/p&gt;
+&lt;h2 id=&#34;常系数非齐次线性微分方程组&#34;&gt;常系数非齐次线性微分方程组&lt;/h2&gt;
+&lt;p&gt;类似地，先解出对应齐次方程组$\frac{d\vec x}{dt}=\overline{\overline{A}}\vec x$的通解$\vec X(t)$，构造&lt;strong&gt;基本解矩阵&lt;/strong&gt;$\overline{\overline{X}}(t)$（$\vec X(t)=\overline{\overline{X}}(t)\vec c$）。&lt;/p&gt;
+&lt;p&gt;作&lt;strong&gt;常数变易&lt;/strong&gt;，设非其次方程组的解$\vec x(t)=\overline{\overline{X}}(t)\vec c(t)$, 代入即&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\overline{\overline{X}}&#39;(t)\vec c(t)+\overline{\overline{X}}(t)\vec c&#39;(t)&amp;amp;=\overline{\overline{A}}\overline{\overline{X}}(t)\vec c(t)+\vec f(t)\newline
+&amp;amp;=\overline{\overline{X}}&#39;(t)\vec c(t)+\vec f(t)\newline
+\overline{\overline{X}}(t)\vec c&#39;(t)=\vec f(t)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;高斯消元解出$\vec c&#39;(t)$后积分即可。&lt;/p&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
+&lt;p&gt;求解如下方程&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d\vec x}{dt}=\begin{pmatrix}1&amp;amp;0&amp;amp;0\newline2&amp;amp;1&amp;amp;-2\newline3&amp;amp;2&amp;amp;1\end{pmatrix}\vec x+\begin{pmatrix}0\newline0\newline e^t\cos2t\end{pmatrix},\vec x(0)=\begin{pmatrix}0\newline0\newline1\end{pmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;【提示】在对$\lambda_{2,3}=1\pm 2i$求解时，有$\vec v_2=\begin{pmatrix}0\newline1\newline-i\end{pmatrix}$，$\vec v_3=\begin{pmatrix}0\newline 1\newline i\end{pmatrix}$。&lt;/p&gt;
+&lt;p&gt;注意到$\vec x_2=\vec v_2e^{\lambda_2 t}=e^t\left[\begin{pmatrix}0\newline\cos2t\newline\sin2t\end{pmatrix}+i\begin{pmatrix}0\newline\sin2t\newline-\cos2t\end{pmatrix}\right]$，$\vec x_3=\overline{\vec v_2}e^{\overline{\lambda_2}t}=\overline{\vec x_2}$，&lt;strong&gt;分别取其实部虚部&lt;/strong&gt;，则基本解矩阵如下，&lt;/p&gt;
+&lt;p&gt;$$
+e^t\begin{pmatrix}
+2&amp;amp;0&amp;amp;0\newline
+-3&amp;amp;\cos2t&amp;amp;\sin2t\newline
+2&amp;amp;\sin2t&amp;amp;-\cos2t
+\end{pmatrix}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;消元法解二元常系数一阶微分方程组&#34;&gt;消元法解二元常系数一阶微分方程组&lt;/h2&gt;
+&lt;p&gt;原理：消元升阶转化为二阶（齐次/非其次）常系数线性微分方程来解。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>微分方程组与线性微分方程组</title>
+        <link>https://rhosta.github.io/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <pubDate>Sun, 23 Jan 2022 14:05:11 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;h2 id=&#34;微分方程组&#34;&gt;微分方程组&lt;/h2&gt;
+&lt;h3 id=&#34;从标量到向量&#34;&gt;从标量到向量&lt;/h3&gt;
+&lt;p&gt;$$
+\begin{cases}\frac{dx}{dt}=f(t,x)\newline
+x|&lt;em&gt;{t=0}=x_0\end{cases}
+\Rightarrow
+\begin{cases}\frac{d\vec x}{dt}=\vec f(t,\vec x)\newline
+\vec x|&lt;/em&gt;{t=0}=\vec x_0\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;即&lt;/p&gt;
+&lt;p&gt;$$
+\begin{cases}\frac{dx_1}{dt}=f_1(t,x_1,x_2,\cdots,x_n)\newline
+\frac{dx_2}{dt}=f_2(t,x_1,x_2,\cdots,x_n)\newline
+\cdots\newline
+\frac{dx_n}{dt}=f_n(t,x_1,x_2,\cdots,x_n)\end{cases}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;n阶微分方程特定一阶微分方程组的等价性&#34;&gt;n阶微分方程&lt;strong&gt;特定&lt;/strong&gt;一阶微分方程组的等价性&lt;/h3&gt;
+&lt;p&gt;$$
+\frac{d^nx}{dt^n}=f(t,x,\frac{dx}{dt},\cdots,\frac{d^{n-1}x}{dt^{n-1}})
+\Leftrightarrow
+\begin{cases}x_2=\frac{dx_1}{dt}\newline
+x_3=\frac{dx_2}{dt}\newline
+\cdots\newline
+x_n=\frac{dx_{n-1}}{dt}\newline
+\frac{dx_n}{dt}=f(t,x_1,x_2,\cdots,x_n-1,x_n)\end{cases}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;线性微分方程组的一般概念&#34;&gt;线性微分方程组的一般概念&lt;/h2&gt;
+&lt;h3 id=&#34;标准形式&#34;&gt;标准形式&lt;/h3&gt;
+&lt;p&gt;$$
+\frac{d\vec x}{dt}=\overline{\overline{A}}(t)\vec x+\vec f(t)\newline
+$$&lt;/p&gt;
+&lt;p&gt;其中$\overline{\overline{A}}={a(t)&lt;em&gt;{i,j}}&lt;/em&gt;{i,j=1}^n$是不依赖$\vec x$的$n\times n$的系数矩阵，$\vec x$是n维列向量。&lt;/p&gt;
+&lt;p&gt;当$f(t)\equiv 0$时，方程为齐次线性方程组，否则为非齐次线性方程组。&lt;/p&gt;
+&lt;h2 id=&#34;线性微分方程组解的一般理论&#34;&gt;线性微分方程组解的一般理论&lt;/h2&gt;
+&lt;p&gt;与高阶线性方程组解的理论类似，包括：线性无关性、朗斯基行列式、通解结构定理。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>二阶变系数线性微分方程的一些解法</title>
+        <link>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/</link>
+        <pubDate>Fri, 21 Jan 2022 13:47:10 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/</guid>
+        <description>&lt;h2 id=&#34;变量替换法&#34;&gt;变量替换法&lt;/h2&gt;
+&lt;h3 id=&#34;欧拉方程&#34;&gt;欧拉方程&lt;/h3&gt;
+&lt;p&gt;如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$&lt;/p&gt;
+&lt;p&gt;$$
+a_0x^n\frac{d^ny}{dx^n}+a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}x\frac{dy}{dx}+a_0y=f(x)
+$$&lt;/p&gt;
+&lt;p&gt;考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;amp;=\frac{1}{x}\frac{d}{dt}\newline
+\frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline
+&amp;amp;\vdots\newline
+\frac{d^n}{dx^n}&amp;amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n+1)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;降阶法&#34;&gt;降阶法&lt;/h3&gt;
+&lt;p&gt;解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，已知存在非零解$y_1$。&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\text{Set }y&amp;amp;=y_1u\newline
+\text{Then }y&#39;&amp;amp;=y_1u&#39;+y_1&amp;rsquo;u\newline
+y&#39;&#39;&amp;amp;=y_1u&#39;&#39;+2y_1&amp;rsquo;u&#39;+y_1&#39;&amp;lsquo;u\newline
+y_1u&amp;rsquo;&#39;+(py_1+2y_1&#39;)u&#39;+(y_1&#39;&#39;+py_1&#39;+q)&amp;amp;=0(\star)\newline
+y_1u&#39;&#39;+(py_1+2y_1&#39;)u&#39;&amp;amp;=0\newline
+\text{Set }z&amp;amp;=u&#39;\newline
+\text{Then }y_1\frac{dz}{dx}&amp;amp;=-(py_1+2\frac{dy_1}{dx})z\newline
+\frac{dz}{z}&amp;amp;=-2\frac{dy_1}{y_1}-pdx\newline
+u&#39;=z&amp;amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline
+u&amp;amp;=C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刘维尔公式&lt;/strong&gt; ：通解为$y=y_1(C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx})$。&lt;/p&gt;
+&lt;p&gt;非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。&lt;/p&gt;
+&lt;h3 id=&#34;某些特殊变系数方程化为常系数方程&#34;&gt;某些特殊变系数方程化为常系数方程&lt;/h3&gt;
+&lt;p&gt;构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。&lt;/p&gt;
+&lt;p&gt;解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，其中$p(x)&#39;,q(x)$连续，且$p^2+2p-4q$等于常数$a$。&lt;/p&gt;
+&lt;p&gt;令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文&lt;/p&gt;
+&lt;p&gt;$$
+vu&#39;&#39;+(pv+2v&#39;)u&#39;+(v&#39;&#39;+pv&#39;+q)=0\newline
+vu&#39;&#39;-\frac{a}{4}vu=0
+$$&lt;/p&gt;
+&lt;p&gt;得到了二阶常系数齐次微分方程$u&#39;&#39;-\frac{a}{4}u=0$。&lt;/p&gt;
+&lt;h2 id=&#34;常数变易法&#34;&gt;常数变易法&lt;/h2&gt;
+&lt;p&gt;解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1+C_2y_2$。&lt;/p&gt;
+&lt;p&gt;设方程的一个特解$\widetilde{y}=u_1y_1+u_2y_2$，&lt;strong&gt;且令&lt;/strong&gt;$u_1&amp;rsquo;y_1+u_2&amp;rsquo;y_2=0$，代入原方程有$u_1&amp;rsquo;y_1+u_2&amp;rsquo;y_2=f(x)$，&lt;/p&gt;
+&lt;p&gt;联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;amp;y_2\newline y_1&#39;&amp;amp;y_2&#39;\end{matrix}\right|\neq 0$），记作$u_1&#39;=\varphi(x),u_2&#39;=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx+y_2\int\psi(x)dx$。&lt;/p&gt;
+&lt;h2 id=&#34;幂级数解法&#34;&gt;幂级数解法&lt;/h2&gt;
+&lt;p&gt;示例：求解$y&#39;&#39;+y=0$。（然而并不变系数）&lt;/p&gt;
+&lt;p&gt;设方程的解可展开为幂级数如下，则&lt;/p&gt;
+&lt;p&gt;$$
+y=a_0+a_1x+\cdots+a_nx_n+\cdots\newline
+y&#39;=a_1+2a_2x\cdots+(n+1)a_{n+1}x_n+\cdots\newline
+y&#39;&#39;=2a_2+3\cdot 2a_3x+\cdots+(n+2)(n+1)a_{n+2}x_n+\cdots
+$$&lt;/p&gt;
+&lt;p&gt;代入原方程整理得&lt;/p&gt;
+&lt;p&gt;$$
+(a_0+2a_2)+(3\cdot 2a_3+a_1)x+(4\cdot 3a_4+a_2)x^2+\cdots=0\newline
+\Downarrow\newline
+y=a_0(1-\frac{1}{2!}x^2+\frac{1}{4}x^4-\frac{1}{6!}x^6+\cdots)\newline +a_1(x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7+\cdots)
+$$&lt;/p&gt;
+&lt;p&gt;进而$y=a_0\cos x+a_1\sin x$为方程的通解。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>二阶常系数线性微分方程</title>
+        <link>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <pubDate>Thu, 20 Jan 2022 15:21:03 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</guid>
+        <description>&lt;h2 id=&#34;二阶常系数齐次线性微分方程&#34;&gt;二阶常系数齐次线性微分方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{d^2y}{dx^2}+p\frac{dy}{dx}+qy=0$的方程，其解应存在求导形式不变性，如指数函数$y=e^{rx}$。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本节中记算子$L=\frac{d^2}{dx^2}+p\frac{d}{dx}+q$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其&lt;strong&gt;特征方程&lt;/strong&gt;为：$r^2+pr+q=0$，则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$p^2-4q&amp;gt;0$时，特征方程有不同实根$r_1,r_2$，对应线性无关解$y_1=e^{r_1x},y_2=e^{r_2x}$，此时原方程&lt;strong&gt;通解&lt;/strong&gt;$y=C_1e^{r_1x}+C_2e^{r_2x}$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$p^2-4q=0$时，特征方程有二重实根$r_0$，对应解$y_1=e^{r_0x}$。考虑与之线性无关的解$y_2=u(x)e^{r_0x}$，$u(x)$不为常数，则&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+e^{r_0x}\left[\frac{d^2u}{dx^2}+(2r_0+p)\frac{du}{dx}+(r_0^2+pr_0+q)u\right]=0\newline
+\frac{d^2u}{dx^2}=0, u=C_1x+C_2
+$$&lt;/p&gt;
+&lt;p&gt;取定$y_2=xe^{r_0x}$，此时原方程&lt;strong&gt;通解&lt;/strong&gt;$y=(C_1+C_2x)e^{r_0x}$。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;$p^2-4q&amp;lt;0$时，特征方程有共轭复根$r_1,r_2=\alpha\pm i\beta$，由此产生解$y_1,y_2=e^{\alpha x}(\cos\beta x\pm i\sin\beta x)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;取定$y_1^\star=\frac{y_1+y_2}{2}, y_2^\star=\frac{y_1-y_2}{2i}$，则方程&lt;strong&gt;通解&lt;/strong&gt;$y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$。&lt;/p&gt;
+&lt;h2 id=&#34;二阶常系数非齐次线性微分方程&#34;&gt;二阶常系数非齐次线性微分方程&lt;/h2&gt;
+&lt;h3 id=&#34;情形一fxp_nxealpha-x&#34;&gt;情形一：$f(x)=P_n(x)e^{\alpha x}$&lt;/h3&gt;
+&lt;p&gt;猜想$L[y]=P_n(x)e^{\alpha x}$的一个特解为$\widetilde{y}=Q(x)e^{\alpha x}$，代入方程，则&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d^2Q}{dx^2}+(2\alpha+p)\frac{dQ}{dx}+(\alpha^2+p\alpha+q)Q=P_n(x)
+$$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$\alpha^2+p\alpha+q\neq 0$时，即$\alpha$不是特征方程的根（零重根），则$Q$为n次多项式，$\widetilde{y}=Q_n(x)e^{\alpha x}$，待定系数法求解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\alpha^2+p\alpha+q=0,2\alpha+p\neq 0$时，即$\alpha$是特征方程的单根（一重根），则$Q$为n+1次多项式，可取定$Q_{n+1}(x)=xQ_n(x)$，$\widetilde{y}=xQ_n(x)e^{\alpha x}$，待定系数法求解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\alpha^2+p\alpha+q=0,2\alpha+p=0$时，即$\alpha$是特征方程的二重根，则$Q$为n+2次多项式，可取定$Q_{n+2}(x)=x^2Q_n(x)$，$\widetilde{y}=x^2Q_n(x)e^{\alpha x}$，待定系数法求解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;综上所述，&lt;strong&gt;特解&lt;/strong&gt;的形式为$\widetilde{y}=x^kQ_n(x)e^{\alpha x}$，$\alpha$是特征方程的k重根。&lt;/p&gt;
+&lt;h3 id=&#34;情形二fxp_nxealpha-xcosbeta-x或者fxp_nxealpha-xsinbeta-x&#34;&gt;情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$&lt;/h3&gt;
+&lt;h4 id=&#34;解法一复值函数求导&#34;&gt;解法一（复值函数求导）&lt;/h4&gt;
+&lt;p&gt;考察方程$L[y]=P_n(x)e^{\alpha x}\cos\beta x+iP_n(x)e^{\alpha x}\sin\beta x=P_n(x)e^{\alpha+i\beta}$，设其特解为$\widetilde{y}=\widetilde{y}_ 1+i\widetilde{y}_ 2$，&lt;/p&gt;
+&lt;p&gt;则$\widetilde{y}_ 1,\widetilde{y}_ 2$分别是$L[y]=P_n(x)e^{\alpha x}\cos\beta x$和$L[y]=P_n(x)e^{\alpha x}\sin\beta x$的特解。&lt;/p&gt;
+&lt;p&gt;示例：求方程$\frac{d^2y}{dx^2}-y=\sin x$的通解。&lt;/p&gt;
+&lt;p&gt;对应齐次方程$\frac{d^2y}{dx^2}-y=0$的特征方程有根$r=\pm 1$，通解为$Y=C_1e^{x}+C_2e^{-x}$。&lt;/p&gt;
+&lt;p&gt;考虑方程$\frac{d^2y}{dx^2}-y=e^{(0+i)x}$，由于$i$为零重根，故特解形式$\widetilde{y}=Cx^0\times 1\times e^{ix}$，代入之&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d\widetilde{y}}{dx}=iCe^{ix},\frac{d^2\widetilde{y}}{dx^2}=-Ce^{ix}\newline
+-Ce^{ix}-Ce^{ix}=e^{ix}\Rightarrow C=\frac{-1}{2}, \widetilde{y}=\frac{-e^{ix}}{2}
+$$&lt;/p&gt;
+&lt;p&gt;又$\frac{-e^{ix}}{2}=\frac{-1}{2}(\cos x+i\sin x)$，故$\widetilde{y}^\star=-\frac{1}{2}\sin x$，故原方程通解$y=Y+\widetilde{y}^\star$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TIPS：一定要注意实部与虚部的分离&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;解法二公式法&#34;&gt;解法二（公式法）&lt;/h4&gt;
+&lt;p&gt;考虑方程$L[y]=\left[P_n^1(x)\cos\beta x+P_n^2(x)\sin\beta x\right]e^{\alpha x}$，设$\alpha$是特征方程的$k(k=0,1)$重根，$m=\max{n,l}$，&lt;/p&gt;
+&lt;p&gt;则方程的特解形式为$\widetilde{y}=x^k\left[P_m^1(x)\cos\beta x+P_m^2(x)\sin\beta x\right]e^{\alpha x}$。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.icourse163.org/learn/ZJU-1206672801?tid=1451623470#/learn/content?type=detail&amp;amp;id=1223478858&amp;amp;cid=1235650121&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;推导&lt;/a&gt;摸了&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;补充&#34;&gt;补充&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://rhosta.github.io/images/%e4%ba%8c%e9%98%b6%e2%80%a6%e8%a7%a3%e6%89%a9%e5%b1%95.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://rhosta.github.io/images/%e4%ba%8c%e9%98%b6%e2%80%a6%e8%a7%a3%e6%80%9d%e8%80%83.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>二阶线性微分方程解的结构</title>
+        <link>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/</link>
+        <pubDate>Thu, 20 Jan 2022 15:20:41 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/</guid>
+        <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
+&lt;h3 id=&#34;二阶线性微分方程&#34;&gt;二阶线性微分方程&lt;/h3&gt;
+&lt;p&gt;形如$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=f(x)$的方程称为&lt;strong&gt;二阶线性微分方程&lt;/strong&gt;，自由项$f(x)\equiv 0$时称之为二阶齐次线性微分方程，否则称为二阶非齐次线性微分方程。&lt;/p&gt;
+&lt;h3 id=&#34;二阶线性微分算子&#34;&gt;二阶线性微分算子&lt;/h3&gt;
+&lt;p&gt;符号：$L=\frac{d^2}{dx^2}+p(x)\frac{d}{dx}+q(x)$，作用在$y$上，即&lt;/p&gt;
+&lt;p&gt;$$
+L[y]=\left(\frac{d^2}{dx^2}+p(x)\frac{d}{dx}+q(x)\right)[y]=\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y
+$$&lt;/p&gt;
+&lt;p&gt;性质：对任意函数$y_1=y_1(x),y_2=y_2(x)$及常数$C_1,C_2$，等式$L[C_1y_1+C_2y_2]=C_1L[y_1]+C_2L[y_2]$恒成立。&lt;/p&gt;
+&lt;h3 id=&#34;函数线性相关性&#34;&gt;函数线性相关性&lt;/h3&gt;
+&lt;p&gt;设$y_1=y_1(x),y_2=y_2(x)$是区间$I$上的函数，若存在不全为零的数$k1,k_2$使得$k_1y_1+k_2y_2=0$，则称函数在区间$I$上线性相关，反之无关。&lt;/p&gt;
+&lt;p&gt;其他描述：若$\frac{y_1(x)}{y_2(x)}=\alpha(\text{constant})$，则$y_1,y_2$线性相关，反之无关。&lt;/p&gt;
+&lt;h3 id=&#34;叠加原理&#34;&gt;叠加原理&lt;/h3&gt;
+&lt;p&gt;定理1：设$y_1=y_1(x),y_2=y_2(x)$都是$L[y]=0$的解，则$y_1,y_2$的线性组合也是方程的解。&lt;/p&gt;
+&lt;p&gt;定理2：设$y_1=y_1(x),y_2=y_2(x)$都是$L[y]=0$的线性无关的两个解，则方程通解为$y=C_1y_1+C_2y_2$。&lt;/p&gt;
+&lt;p&gt;定理3：&lt;strong&gt;二阶非齐次线性微分方程通解的结构定理&lt;/strong&gt; 设$\widetilde{y}=\widetilde{y}(x)$是$L[y]=f(x)$的一个特解，且$L[y]=0$的通解是$Y=C_1y_1+C_2y_2$，则$L[y]=f(x)$的通解为$y=Y+\widetilde{y}$。&lt;/p&gt;
+&lt;h3 id=&#34;广义叠加原理&#34;&gt;广义叠加原理&lt;/h3&gt;
+&lt;p&gt;定理4：设$y_1,y_2$分别是$L[y]=f_1(x),L[y]=f_2(x)$的解，则$y_2+y_2$是$L[y]=f_1(x)+f_2(x)$的解。&lt;/p&gt;
+&lt;p&gt;定理5：设$y_1+iy_2$是$L[y]=f_1(x)+if_2(x)$的解，则$y_1,y_2$分别是$L[y]=f_1(x),L[y]=f_2(x)$的解。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>可降阶的二阶微分方程</title>
+        <link>https://rhosta.github.io/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <pubDate>Thu, 20 Jan 2022 15:20:09 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</guid>
+        <description>&lt;h2 id=&#34;fracd2ydx2fx型&#34;&gt;$\frac{d^2y}{dx^2}=f(x)$型&lt;/h2&gt;
+&lt;p&gt;解法，连续做两次积分。&lt;/p&gt;
+&lt;p&gt;$$
+\frac{dy}{dx}=\int f(x)dx+C_1\newline
+y=\int\left[\int f(x)dx\right]dx+C_1x+C_2
+$$&lt;/p&gt;
+&lt;p&gt;示例：求解$\frac{d^2y}{dx^2}=\frac{1}{\cos^2x}, y|&lt;em&gt;{x=\frac{\pi}{4}}=\frac{\ln 2}{2}, \frac{dy}{dx}|&lt;/em&gt;{x=\frac{\pi}{4}}=1$。&lt;/p&gt;
+&lt;p&gt;由$\frac{dy}{dx} =\tan x+C_1,y=-\ln|\cos x|+C_1x+C_2$，带入初值条件，则$C_1=C_2=0$。&lt;/p&gt;
+&lt;p&gt;注意，连续求积分过程中每求一次积分即计算出相应待定常数往往能简化运算。&lt;/p&gt;
+&lt;h2 id=&#34;fracd2ydx2fxfracdydx型不显含y&#34;&gt;$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y）&lt;/h2&gt;
+&lt;p&gt;变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dx}$，方程化为$\frac{dp}{dx}=f(x,p)$，是一阶微分方程。&lt;/p&gt;
+&lt;p&gt;示例：求解$(1+x^2)\frac{d^2y}{dx^2}=2x\frac{dy}{dx}$。&lt;/p&gt;
+&lt;p&gt;令$p=\frac{dy}{dx}$，方程化为$(1+x^2)\frac{dp}{dx}=2xp$，系可分离变量的一阶微分方程，解为$p=C_1(x^2+1)$，&lt;/p&gt;
+&lt;p&gt;则$y=\int pdx=\frac{C_1}{3}x^3+C_1x+C_2$。&lt;/p&gt;
+&lt;h2 id=&#34;fracd2ydx2fyfracdydx型不显含x&#34;&gt;$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x）&lt;/h2&gt;
+&lt;p&gt;变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dy}\frac{dy}{dx}=p\frac{dp}{dy}$，方程化为$p\frac{dp}{dy}=f(y,p)$，系一阶微分方程。&lt;/p&gt;
+&lt;p&gt;示例：求解$\left(\frac{dy}{dx}\right)^2-y\frac{d^2y}{dx^2}=0$。&lt;/p&gt;
+&lt;p&gt;令$p=\frac{dy}{dx}$，方程化为$p^2-yp\frac{dp}{dy}=0$，得$p=C_1y(C_1\in\mathbb R)$，&lt;/p&gt;
+&lt;p&gt;则$\frac{dy}{y}=C_1dx$，得$y=C_2e^{C_1x}(C_2\in\mathbb R)$。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>全微分方程与积分因子</title>
+        <link>https://rhosta.github.io/p/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/</link>
+        <pubDate>Sat, 15 Jan 2022 10:15:23 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/</guid>
+        <description>&lt;h2 id=&#34;全微分方程概念&#34;&gt;全微分方程概念&lt;/h2&gt;
+&lt;p&gt;形如$P(x,y)dx+Q(x,y)dy=0$的方程，存在二元函数$u(x,y)$使得$du(x,y)=P(x,y)dx+Q(x,y)dy$，则称该方程为 &lt;strong&gt;全微分方程&lt;/strong&gt;，即$du(x,y)=0$，其解$u(x,y)=C$为方程的原函数。&lt;/p&gt;
+&lt;h2 id=&#34;全微分方程性质&#34;&gt;全微分方程性质&lt;/h2&gt;
+&lt;p&gt;$Pdx+Qdy$为全微分等价于$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$。（曲线积分与路径无关）&lt;/p&gt;
+&lt;p&gt;$du=Pdx+Qdy$等价于$\frac{\partial u}{\partial x}=P, \frac{\partial u}{\partial y}=Q$（全微分形式不变性）&lt;/p&gt;
+&lt;h2 id=&#34;示例1&#34;&gt;示例1&lt;/h2&gt;
+&lt;p&gt;求以下方程的通解&lt;/p&gt;
+&lt;p&gt;$$
+\frac{2xy+1}{y}dx+\frac{y-x}{y^2}dy=0
+$$&lt;/p&gt;
+&lt;h3 id=&#34;偏导数角度&#34;&gt;偏导数角度&lt;/h3&gt;
+&lt;p&gt;由$\frac{\partial \frac{2xy+1}{y}}{\partial y}=\frac{\partial \frac{y-x}{y^2}}{\partial x}=-\frac{1}{y^2}$知方程为全微分方程，设为$u(x,y)$。&lt;/p&gt;
+&lt;p&gt;由$\frac{\partial u}{\partial x}=\frac{2xy+1}{y}$，则$u=x^2+\frac{x}{y}+C(y)$。&lt;/p&gt;
+&lt;p&gt;又$\frac{\partial u}{\partial y}=\frac{y-x}{y^2}$，则$C&#39;(y)=\frac{1}{y}$。&lt;/p&gt;
+&lt;p&gt;进而$u(x,y)=x^2+\frac{x}{y}+\ln|y|+C_1$。&lt;/p&gt;
+&lt;h3 id=&#34;曲线积分法&#34;&gt;曲线积分法&lt;/h3&gt;
+&lt;p&gt;取定$u(x,y)=\int_{(0,1)}^{(x,y)}Pdx+Qdy$（下限$(x_0,y_0)=(0,1)$）,则&lt;/p&gt;
+&lt;p&gt;$$
+u(x,y)=\int_{(0,1)}^{(x,1)}Pdx+Qdy+\int_{(x,1)
+}^{(x,y)}Pdx+Qdy\newline
+=\int_{(0,1)}^{(x,1)}\frac{2xy+1}{y}dx+\int_{(x,1)
+}^{(x,y)}\frac{y-x}{y^2}dy\newline
+=x^2+\frac{x}{y}+\ln|y|
+$$&lt;/p&gt;
+&lt;h3 id=&#34;分项组合凑微分法&#34;&gt;分项组合凑微分法&lt;/h3&gt;
+&lt;p&gt;利用等式$du=u&amp;rsquo;du$和$duv=udv+vdu$，由&lt;/p&gt;
+&lt;p&gt;$$
+Pdx+Qdy=2xdx+\frac{1}{y}dx+\frac{1}{y}dy-\frac{x}{y^2}dy\newline
+=2xdx+\frac{1}{y}dy+(\frac{1}{y}dx+xd\frac{1}{y})\newline
+=dx^2+d\ln|y|+d\frac{x}{y}
+$$&lt;/p&gt;
+&lt;p&gt;故$u=x^2+\ln|y|+\frac{x}{y}+C_1$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;积分因子概念&#34;&gt;积分因子概念&lt;/h2&gt;
+&lt;p&gt;对任意非全微分方程$Pdx+Qdy=0$，存在函数$\mu(x,y)\neq 0$使得$\mu Pdx+\mu Qdy=0$是全微分方程，则称$\mu(x,y)$为原方程的一个&lt;strong&gt;积分因子&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;积分因子求法&#34;&gt;积分因子求法&lt;/h2&gt;
+&lt;p&gt;由定义$\mu Pdx+\mu Qdy=0$是全微分方程，则$\frac{\partial \mu P}{\partial y}=\frac{\partial \mu Q}{\partial x}$，即&lt;/p&gt;
+&lt;p&gt;$$
+\frac{\partial \mu}{\partial y}P+\mu\frac{\partial P}{\partial y}=
+\frac{\partial \mu}{\partial x}Q+\mu\frac{\partial Q}{\partial x}\newline
+\frac{\partial \mu}{\partial y}P-\frac{\partial \mu}{\partial x}Q=
+\mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})
+$$&lt;/p&gt;
+&lt;p&gt;考虑$\mu=\mu(x)$, 则&lt;/p&gt;
+&lt;p&gt;$$
+-\frac{d\mu}{dx}Q=\mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})\newline
+\frac{d\mu}{\mu}=\frac{1}{Q}(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x})
+$$&lt;/p&gt;
+&lt;p&gt;若右式为关于$x$的一元函数，记之为$\varphi(x)$，则$\mu=Ce^{\int \varphi(x)dx}$，略去常数即$\mu=e^{\int \varphi(x)dx}$。&lt;/p&gt;
+&lt;p&gt;同理，若考虑$\mu=\mu(y)$，则$\mu=Ce^{\int \psi(y)dy}$，其中$\psi(y)=\frac{-1}{P}(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x})$。&lt;/p&gt;
+&lt;h2 id=&#34;示例2&#34;&gt;示例2&lt;/h2&gt;
+&lt;p&gt;求方程$ydx-xdy=0$的通解&lt;/p&gt;
+&lt;p&gt;由$\frac{\partial y}{\partial y}=1, \frac{\partial(-x)}{\partial x}=-1$知，方程不是全微分方程。&lt;/p&gt;
+&lt;p&gt;设$\varphi(x)=\frac{1}{-x}\left[1-(-1)\right]=\frac{-2}{x}$，则可取定积分因子$\mu=e^{\int \frac{-2}{x}dx}=\frac{1}{x^2}$，&lt;/p&gt;
+&lt;p&gt;对于同解全微分方程$\mu ydx-\mu xdy=0$，即$0=\frac{xdy-ydx}{x^2}=d\frac{y}{x}$&lt;/p&gt;
+&lt;p&gt;显然通解为$u=\frac{y}{x}=C$，即$y=Cx$。&lt;/p&gt;
+&lt;p&gt;另外，$\mu=\frac{-2}{y},\frac{1}{xy},\frac{1}{x^2+y^2},\frac{1}{x^2-y^2}$也是积分因子。利用不同的积分因子所求解之形式也是不同的。&lt;/p&gt;
+&lt;h2 id=&#34;示例3&#34;&gt;示例3&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;常用全微分公式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$$
+dxy=xdy+ydx\newline
+d\frac{x}{y}=\frac{ydx-xdy}{y^2}\newline
+d\arctan\frac{x}{y}=\frac{1}{1+\frac{x}{y}^2}\frac{ydx-xdy}{y^2}=\frac{ydx-xdy}{x^2+y^2}
+$$&lt;/p&gt;
+&lt;p&gt;求方程$(x^2y^3+y)dx+(x^3y^2-x)dy=0$的通解。&lt;/p&gt;
+&lt;p&gt;分项组合后，方程化为$x^2y^3dx+x^3y^2dy+(ydx-xdy)=0$，观察知$\mu=\frac{1}{xy}$是方程的一个积分因子。&lt;/p&gt;
+&lt;p&gt;相应同解全微分方程为$xy^2dx+x^2ydy+\frac{dx}{x}-\frac{dy}{y}=0$，即$\frac{1}{2}dx^2y^2+d\ln|x|-d\ln|y|=0$。&lt;/p&gt;
+&lt;p&gt;故方程通解为$\frac{x^2y^2}{2}+\ln\left|\frac{x}{y}\right|=C$。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>一阶微分方程</title>
+        <link>https://rhosta.github.io/p/%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;此课程中，方程内的$\int f(x)dx$的含义为函数$f(x)$的 &lt;strong&gt;某一个原函数&lt;/strong&gt; ，因此要留意$\int fdx=\int gdy +C$中常数的写明。&lt;/p&gt;
+&lt;h2 id=&#34;可分离变量方程&#34;&gt;可分离变量方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}=f(x)g(y)$的微分方程，能够写出一阶导数的表达。当$g(y)\neq 0$时，相除以分离变量。&lt;/p&gt;
+&lt;p&gt;技巧：如求积分出现$\ln|G(y)|=\ln|F(x)|+C$，可直接取常数为$\ln|C|$，类似有&lt;/p&gt;
+&lt;p&gt;$$
+-\ln|G|=\ln|F|-\ln|C|\newline
+k\ln|G|=\ln|F|+k\ln|C|
+$$&lt;/p&gt;
+&lt;p&gt;提示：留意常数取到0（平凡解$y=0$）的验证。&lt;/p&gt;
+&lt;h2 id=&#34;齐次方程&#34;&gt;齐次方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}=g(\frac{y}{x})$的微分方程。引入变量$u=\frac{y}{x}$以替换y，即$y=xu, y’=xu’+u$。&lt;/p&gt;
+&lt;p&gt;则方程为$\frac{du}{dx}=\frac{1}{x}\left[g(u)-u\right]$，可分离变量。&lt;/p&gt;
+&lt;h2 id=&#34;一阶线性微分方程&#34;&gt;一阶线性微分方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}+p(x)y=g(x)$的微分方程，其中$g(x)$称为自由项或非其次项，其恒为零时方程为一阶齐次线性微分方程，否则称为一阶非齐次线性方程。&lt;/p&gt;
+&lt;h3 id=&#34;齐次情形&#34;&gt;齐次情形&lt;/h3&gt;
+&lt;p&gt;按照可分离变量方程的解法得到通解公式$y=Ce^{-\int p(x)dx}$，C为任意常数。&lt;/p&gt;
+&lt;h3 id=&#34;非齐次情形&#34;&gt;非齐次情形&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;常数变易法&lt;/strong&gt; 先解对应齐次方程。然后变易常数C为$u=u(x)$，带入原方程中解出$u$，进而得到$y=e^{-\int p(x)dx}u$。&lt;/p&gt;
+&lt;p&gt;通解公式为&lt;/p&gt;
+&lt;p&gt;$$
+y=e^{-\int p(x)dx}\left(\int q(x)e^{\int p(x)dx} dx +C\right)
+$$&lt;/p&gt;
+&lt;p&gt;本质上是“非齐次方程的一个特解+对应齐次方程的通解”的结构。&lt;/p&gt;
+&lt;h2 id=&#34;伯努利方程&#34;&gt;伯努利方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}+p(x)y=q(x)y^\alpha, \alpha\neq0,1$的微分方程。&lt;strong&gt;变量替换法&lt;/strong&gt; 令$u=y^{1-\alpha}$&lt;/p&gt;
+&lt;p&gt;则方程为$\frac{du}{(1-\alpha)dx}+p(x)u=q(x)$，系一阶线性微分方程。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

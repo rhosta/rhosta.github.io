@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 压强原理 压强：反应来源于压力（尤其是重力）的作用效果的物理量，$p=\dfrac NS\quad(\text{unit: Pa}=\text N\cdot\text m^{-2})$。
+液体压强：均匀液体中压强仅与所在深度有关，与方向、容器无关，$p=\rho gh$，$F\text{浮}=\Delta ps=\rho g\Delta h$。
+大气压强：与温度、高度相关有关。标准大气压（海拔0，温度0）$1\text{atm}\approx 1.01\times10^5\text{Pa}\approx 760\text{mmHg}$。
+水银测压计：汞柱（顶部真空）高度数值即大气压强大小。
+2 温度、温标 热力学第零定律：系统A、B分别与系统C间热平衡，则系统A、B间一定热平衡。
+温度：反应分子无序运动剧烈程度的物理量。
+温标：用数值刻画温度大小。
+温标三要素：测温物质、测温属性、固定点。
+温标分类：经验温标、理想气体温标、热力学温标、国际实用温标。
+理想气体温标：
+$$ T=\begin{cases} \lim_{p_\text{tr}\to0}T(p)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{p}{p_\text{tr}}\newline \lim_{p_\text{tr}\to0}T(V)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{V}{V_\text{tr}}\newline \end{cases} $$
+热力学温标： $$ \begin{aligned} 1\text K&amp;amp;=\dfrac{T\text tr}{273.16}\newline t/^\circ\text C&amp;amp;=T/\text K-273.15\approx T/\text K-273\newline t_\text F/^\circ\text F&amp;amp;=32&#43;\frac95t/^\circ\text C \end{aligned} $$
+3 理想气体物态方程 玻意耳-马略特定律：气压趋近于零时，气体相同质量、温度不变时，压强与体积之积为常数。
+阿伏伽德罗定律：气压趋近于零时，相同气压和温度下$1\text{mol}$任意气体所占体积相同。
+理想气体物态方程：气压趋近于零时，有 $$ pV=vRT=\frac nmRT\quad(\text{unit: J}\cdot\text{mol}^{-1}) $$ 常使用初末状态方程对应做差的方式解题
+普适气体常量： $$ \begin{aligned} R=&amp;amp;\frac{p_\text{tr}V_{\text m,\text{tr}}}{273.16\text K}T\newline \approx&amp;amp;8.31\text J\cdot\text{mol}^{-1}\cdot\text K^{-1}\newline \approx&amp;amp;8.'><title>温度、温标、理想气体</title>
+
+<link rel='canonical' href='https://rhosta.github.io/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/'>
+
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='温度、温标、理想气体'>
+<meta property='og:description' content='1 压强原理 压强：反应来源于压力（尤其是重力）的作用效果的物理量，$p=\dfrac NS\quad(\text{unit: Pa}=\text N\cdot\text m^{-2})$。
+液体压强：均匀液体中压强仅与所在深度有关，与方向、容器无关，$p=\rho gh$，$F\text{浮}=\Delta ps=\rho g\Delta h$。
+大气压强：与温度、高度相关有关。标准大气压（海拔0，温度0）$1\text{atm}\approx 1.01\times10^5\text{Pa}\approx 760\text{mmHg}$。
+水银测压计：汞柱（顶部真空）高度数值即大气压强大小。
+2 温度、温标 热力学第零定律：系统A、B分别与系统C间热平衡，则系统A、B间一定热平衡。
+温度：反应分子无序运动剧烈程度的物理量。
+温标：用数值刻画温度大小。
+温标三要素：测温物质、测温属性、固定点。
+温标分类：经验温标、理想气体温标、热力学温标、国际实用温标。
+理想气体温标：
+$$ T=\begin{cases} \lim_{p_\text{tr}\to0}T(p)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{p}{p_\text{tr}}\newline \lim_{p_\text{tr}\to0}T(V)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{V}{V_\text{tr}}\newline \end{cases} $$
+热力学温标： $$ \begin{aligned} 1\text K&amp;amp;=\dfrac{T\text tr}{273.16}\newline t/^\circ\text C&amp;amp;=T/\text K-273.15\approx T/\text K-273\newline t_\text F/^\circ\text F&amp;amp;=32&#43;\frac95t/^\circ\text C \end{aligned} $$
+3 理想气体物态方程 玻意耳-马略特定律：气压趋近于零时，气体相同质量、温度不变时，压强与体积之积为常数。
+阿伏伽德罗定律：气压趋近于零时，相同气压和温度下$1\text{mol}$任意气体所占体积相同。
+理想气体物态方程：气压趋近于零时，有 $$ pV=vRT=\frac nmRT\quad(\text{unit: J}\cdot\text{mol}^{-1}) $$ 常使用初末状态方程对应做差的方式解题
+普适气体常量： $$ \begin{aligned} R=&amp;amp;\frac{p_\text{tr}V_{\text m,\text{tr}}}{273.16\text K}T\newline \approx&amp;amp;8.31\text J\cdot\text{mol}^{-1}\cdot\text K^{-1}\newline \approx&amp;amp;8.'>
+<meta property='og:url' content='https://rhosta.github.io/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/'>
+<meta property='og:site_name' content='Site of Nosta the altered'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='理想气体状态方程' /><meta property='article:published_time' content='2022-02-13T13:39:51&#43;00:00'/><meta property='article:modified_time' content='2022-02-13T13:39:51&#43;00:00'/>
+<meta name="twitter:title" content="温度、温标、理想气体">
+<meta name="twitter:description" content="1 压强原理 压强：反应来源于压力（尤其是重力）的作用效果的物理量，$p=\dfrac NS\quad(\text{unit: Pa}=\text N\cdot\text m^{-2})$。
+液体压强：均匀液体中压强仅与所在深度有关，与方向、容器无关，$p=\rho gh$，$F\text{浮}=\Delta ps=\rho g\Delta h$。
+大气压强：与温度、高度相关有关。标准大气压（海拔0，温度0）$1\text{atm}\approx 1.01\times10^5\text{Pa}\approx 760\text{mmHg}$。
+水银测压计：汞柱（顶部真空）高度数值即大气压强大小。
+2 温度、温标 热力学第零定律：系统A、B分别与系统C间热平衡，则系统A、B间一定热平衡。
+温度：反应分子无序运动剧烈程度的物理量。
+温标：用数值刻画温度大小。
+温标三要素：测温物质、测温属性、固定点。
+温标分类：经验温标、理想气体温标、热力学温标、国际实用温标。
+理想气体温标：
+$$ T=\begin{cases} \lim_{p_\text{tr}\to0}T(p)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{p}{p_\text{tr}}\newline \lim_{p_\text{tr}\to0}T(V)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{V}{V_\text{tr}}\newline \end{cases} $$
+热力学温标： $$ \begin{aligned} 1\text K&amp;amp;=\dfrac{T\text tr}{273.16}\newline t/^\circ\text C&amp;amp;=T/\text K-273.15\approx T/\text K-273\newline t_\text F/^\circ\text F&amp;amp;=32&#43;\frac95t/^\circ\text C \end{aligned} $$
+3 理想气体物态方程 玻意耳-马略特定律：气压趋近于零时，气体相同质量、温度不变时，压强与体积之积为常数。
+阿伏伽德罗定律：气压趋近于零时，相同气压和温度下$1\text{mol}$任意气体所占体积相同。
+理想气体物态方程：气压趋近于零时，有 $$ pV=vRT=\frac nmRT\quad(\text{unit: J}\cdot\text{mol}^{-1}) $$ 常使用初末状态方程对应做差的方式解题
+普适气体常量： $$ \begin{aligned} R=&amp;amp;\frac{p_\text{tr}V_{\text m,\text{tr}}}{273.16\text K}T\newline \approx&amp;amp;8.31\text J\cdot\text{mol}^{-1}\cdot\text K^{-1}\newline \approx&amp;amp;8.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hubb9c6dbf30a498d53907e8b9c7b2de8d_30468_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Site of Nosta the altered</a></h1>
+            <h2 class="site-description">El la subtitile.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/rhosta/rhosta.gitHub.io'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:nosta@qq.com'
+                        target="_blank"
+                        title="Mail me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
+                第二学期
+            </a>
+        
+            <a href="/categories/%E7%83%AD%E5%AD%A6/" style="background-color: #2a9d8f; color: #fff;">
+                热学
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/">温度、温标、理想气体</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 13, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="1-压强原理">1 压强原理</h2>
+<p>压强：反应来源于压力（尤其是重力）的作用效果的物理量，$p=\dfrac NS\quad(\text{unit: Pa}=\text N\cdot\text m^{-2})$。</p>
+<p>液体压强：均匀液体中压强仅与所在深度有关，与方向、容器无关，$p=\rho gh$，$F\text{浮}=\Delta ps=\rho g\Delta h$。</p>
+<p>大气压强：与温度、高度相关有关。标准大气压（海拔0，温度0）$1\text{atm}\approx 1.01\times10^5\text{Pa}\approx 760\text{mmHg}$。</p>
+<p>水银测压计：汞柱（顶部真空）高度数值即大气压强大小。</p>
+<h2 id="2-温度温标">2 温度、温标</h2>
+<p>热力学第零定律：系统A、B分别与系统C间热平衡，则系统A、B间一定热平衡。</p>
+<p>温度：反应分子无序运动剧烈程度的物理量。</p>
+<p>温标：用数值刻画温度大小。</p>
+<p>温标三要素：测温物质、测温属性、固定点。</p>
+<p>温标分类：经验温标、理想气体温标、热力学温标、国际实用温标。</p>
+<p>理想气体温标：</p>
+<p>$$
+T=\begin{cases}
+\lim_{p_\text{tr}\to0}T(p)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{p}{p_\text{tr}}\newline
+\lim_{p_\text{tr}\to0}T(V)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{V}{V_\text{tr}}\newline
+\end{cases}
+$$</p>
+<p>热力学温标：
+$$
+\begin{aligned}
+1\text K&amp;=\dfrac{T\text tr}{273.16}\newline
+t/^\circ\text C&amp;=T/\text K-273.15\approx T/\text K-273\newline
+t_\text F/^\circ\text F&amp;=32+\frac95t/^\circ\text C
+\end{aligned}
+$$</p>
+<h2 id="3-理想气体物态方程">3 理想气体物态方程</h2>
+<p>玻意耳-马略特定律：气压趋近于零时，气体相同质量、温度不变时，压强与体积之积为常数。</p>
+<p>阿伏伽德罗定律：气压趋近于零时，相同气压和温度下$1\text{mol}$任意气体所占体积相同。</p>
+<p>理想气体物态方程：气压趋近于零时，有
+$$
+pV=vRT=\frac nmRT\quad(\text{unit: J}\cdot\text{mol}^{-1})
+$$
+<em>常使用初末状态方程对应做差的方式解题</em></p>
+<p>普适气体常量：
+$$
+\begin{aligned}
+R=&amp;\frac{p_\text{tr}V_{\text m,\text{tr}}}{273.16\text K}T\newline
+\approx&amp;8.31\text J\cdot\text{mol}^{-1}\cdot\text K^{-1}\newline
+\approx&amp;8.20\times10^{-2}\text{atm}\cdot\text L\cdot\text{mol}^{-1}\cdot\text K^{-1}
+\end{aligned}
+$$</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B/">理想气体状态方程</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E5%9C%A8%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8F%82%E8%80%83%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在运动的参考系中的运动</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8E%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E7%9F%A2%E9%87%8F%E6%8F%8F%E8%BF%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">坐标系与质点运动的矢量描述</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">K1,K2的证明（未完成）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常系数线性微分方程组的解法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微分方程组与线性微分方程组</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Site of Nosta the altered
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.9.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-压强原理">1 压强原理</a></li>
+    <li><a href="#2-温度温标">2 温度、温标</a></li>
+    <li><a href="#3-理想气体物态方程">3 理想气体物态方程</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

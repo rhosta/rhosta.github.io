@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>可分离变量方程 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E6%96%B9%E7%A8%8B/</link>
+        <description>Recent content in 可分离变量方程 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 09 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E6%96%B9%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>一阶微分方程</title>
+        <link>https://rhosta.github.io/p/%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;此课程中，方程内的$\int f(x)dx$的含义为函数$f(x)$的 &lt;strong&gt;某一个原函数&lt;/strong&gt; ，因此要留意$\int fdx=\int gdy +C$中常数的写明。&lt;/p&gt;
+&lt;h2 id=&#34;可分离变量方程&#34;&gt;可分离变量方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}=f(x)g(y)$的微分方程，能够写出一阶导数的表达。当$g(y)\neq 0$时，相除以分离变量。&lt;/p&gt;
+&lt;p&gt;技巧：如求积分出现$\ln|G(y)|=\ln|F(x)|+C$，可直接取常数为$\ln|C|$，类似有&lt;/p&gt;
+&lt;p&gt;$$
+-\ln|G|=\ln|F|-\ln|C|\newline
+k\ln|G|=\ln|F|+k\ln|C|
+$$&lt;/p&gt;
+&lt;p&gt;提示：留意常数取到0（平凡解$y=0$）的验证。&lt;/p&gt;
+&lt;h2 id=&#34;齐次方程&#34;&gt;齐次方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}=g(\frac{y}{x})$的微分方程。引入变量$u=\frac{y}{x}$以替换y，即$y=xu, y’=xu’+u$。&lt;/p&gt;
+&lt;p&gt;则方程为$\frac{du}{dx}=\frac{1}{x}\left[g(u)-u\right]$，可分离变量。&lt;/p&gt;
+&lt;h2 id=&#34;一阶线性微分方程&#34;&gt;一阶线性微分方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}+p(x)y=g(x)$的微分方程，其中$g(x)$称为自由项或非其次项，其恒为零时方程为一阶齐次线性微分方程，否则称为一阶非齐次线性方程。&lt;/p&gt;
+&lt;h3 id=&#34;齐次情形&#34;&gt;齐次情形&lt;/h3&gt;
+&lt;p&gt;按照可分离变量方程的解法得到通解公式$y=Ce^{-\int p(x)dx}$，C为任意常数。&lt;/p&gt;
+&lt;h3 id=&#34;非齐次情形&#34;&gt;非齐次情形&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;常数变易法&lt;/strong&gt; 先解对应齐次方程。然后变易常数C为$u=u(x)$，带入原方程中解出$u$，进而得到$y=e^{-\int p(x)dx}u$。&lt;/p&gt;
+&lt;p&gt;通解公式为&lt;/p&gt;
+&lt;p&gt;$$
+y=e^{-\int p(x)dx}\left(\int q(x)e^{\int p(x)dx} dx +C\right)
+$$&lt;/p&gt;
+&lt;p&gt;本质上是“非齐次方程的一个特解+对应齐次方程的通解”的结构。&lt;/p&gt;
+&lt;h2 id=&#34;伯努利方程&#34;&gt;伯努利方程&lt;/h2&gt;
+&lt;p&gt;形如$\frac{dy}{dx}+p(x)y=q(x)y^\alpha, \alpha\neq0,1$的微分方程。&lt;strong&gt;变量替换法&lt;/strong&gt; 令$u=y^{1-\alpha}$&lt;/p&gt;
+&lt;p&gt;则方程为$\frac{du}{(1-\alpha)dx}+p(x)u=q(x)$，系一阶线性微分方程。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

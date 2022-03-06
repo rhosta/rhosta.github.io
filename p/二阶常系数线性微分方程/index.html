@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='二阶常系数齐次线性微分方程 形如$\frac{d^2y}{dx^2}&#43;p\frac{dy}{dx}&#43;qy=0$的方程，其解应存在求导形式不变性，如指数函数$y=e^{rx}$。
+ 本节中记算子$L=\frac{d^2}{dx^2}&#43;p\frac{d}{dx}&#43;q$。
+ 其特征方程为：$r^2&#43;pr&#43;q=0$，则
+  $p^2-4q&amp;gt;0$时，特征方程有不同实根$r_1,r_2$，对应线性无关解$y_1=e^{r_1x},y_2=e^{r_2x}$，此时原方程通解$y=C_1e^{r_1x}&#43;C_2e^{r_2x}$。
+  $p^2-4q=0$时，特征方程有二重实根$r_0$，对应解$y_1=e^{r_0x}$。考虑与之线性无关的解$y_2=u(x)e^{r_0x}$，$u(x)$不为常数，则
+  $$ e^{r_0x}\left[\frac{d^2u}{dx^2}&#43;(2r_0&#43;p)\frac{du}{dx}&#43;(r_0^2&#43;pr_0&#43;q)u\right]=0\newline \frac{d^2u}{dx^2}=0, u=C_1x&#43;C_2 $$
+取定$y_2=xe^{r_0x}$，此时原方程通解$y=(C_1&#43;C_2x)e^{r_0x}$。
+$p^2-4q&amp;lt;0$时，特征方程有共轭复根$r_1,r_2=\alpha\pm i\beta$，由此产生解$y_1,y_2=e^{\alpha x}(\cos\beta x\pm i\sin\beta x)$  取定$y_1^\star=\frac{y_1&#43;y_2}{2}, y_2^\star=\frac{y_1-y_2}{2i}$，则方程通解$y=e^{\alpha x}(C_1\cos\beta x&#43;C_2\sin\beta x)$。
+二阶常系数非齐次线性微分方程 情形一：$f(x)=P_n(x)e^{\alpha x}$ 猜想$L[y]=P_n(x)e^{\alpha x}$的一个特解为$\widetilde{y}=Q(x)e^{\alpha x}$，代入方程，则
+$$ \frac{d^2Q}{dx^2}&#43;(2\alpha&#43;p)\frac{dQ}{dx}&#43;(\alpha^2&#43;p\alpha&#43;q)Q=P_n(x) $$
+  $\alpha^2&#43;p\alpha&#43;q\neq 0$时，即$\alpha$不是特征方程的根（零重根），则$Q$为n次多项式，$\widetilde{y}=Q_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p\neq 0$时，即$\alpha$是特征方程的单根（一重根），则$Q$为n&#43;1次多项式，可取定$Q_{n&#43;1}(x)=xQ_n(x)$，$\widetilde{y}=xQ_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p=0$时，即$\alpha$是特征方程的二重根，则$Q$为n&#43;2次多项式，可取定$Q_{n&#43;2}(x)=x^2Q_n(x)$，$\widetilde{y}=x^2Q_n(x)e^{\alpha x}$，待定系数法求解。
+  综上所述，特解的形式为$\widetilde{y}=x^kQ_n(x)e^{\alpha x}$，$\alpha$是特征方程的k重根。
+情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$ 解法一（复值函数求导） 考察方程$L[y]=P_n(x)e^{\alpha x}\cos\beta x&#43;iP_n(x)e^{\alpha x}\sin\beta x=P_n(x)e^{\alpha&#43;i\beta}$，设其特解为$\widetilde{y}=\widetilde{y}_ 1&#43;i\widetilde{y}_ 2$，'><title>二阶常系数线性微分方程</title>
+
+<link rel='canonical' href='https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='二阶常系数线性微分方程'>
+<meta property='og:description' content='二阶常系数齐次线性微分方程 形如$\frac{d^2y}{dx^2}&#43;p\frac{dy}{dx}&#43;qy=0$的方程，其解应存在求导形式不变性，如指数函数$y=e^{rx}$。
+ 本节中记算子$L=\frac{d^2}{dx^2}&#43;p\frac{d}{dx}&#43;q$。
+ 其特征方程为：$r^2&#43;pr&#43;q=0$，则
+  $p^2-4q&amp;gt;0$时，特征方程有不同实根$r_1,r_2$，对应线性无关解$y_1=e^{r_1x},y_2=e^{r_2x}$，此时原方程通解$y=C_1e^{r_1x}&#43;C_2e^{r_2x}$。
+  $p^2-4q=0$时，特征方程有二重实根$r_0$，对应解$y_1=e^{r_0x}$。考虑与之线性无关的解$y_2=u(x)e^{r_0x}$，$u(x)$不为常数，则
+  $$ e^{r_0x}\left[\frac{d^2u}{dx^2}&#43;(2r_0&#43;p)\frac{du}{dx}&#43;(r_0^2&#43;pr_0&#43;q)u\right]=0\newline \frac{d^2u}{dx^2}=0, u=C_1x&#43;C_2 $$
+取定$y_2=xe^{r_0x}$，此时原方程通解$y=(C_1&#43;C_2x)e^{r_0x}$。
+$p^2-4q&amp;lt;0$时，特征方程有共轭复根$r_1,r_2=\alpha\pm i\beta$，由此产生解$y_1,y_2=e^{\alpha x}(\cos\beta x\pm i\sin\beta x)$  取定$y_1^\star=\frac{y_1&#43;y_2}{2}, y_2^\star=\frac{y_1-y_2}{2i}$，则方程通解$y=e^{\alpha x}(C_1\cos\beta x&#43;C_2\sin\beta x)$。
+二阶常系数非齐次线性微分方程 情形一：$f(x)=P_n(x)e^{\alpha x}$ 猜想$L[y]=P_n(x)e^{\alpha x}$的一个特解为$\widetilde{y}=Q(x)e^{\alpha x}$，代入方程，则
+$$ \frac{d^2Q}{dx^2}&#43;(2\alpha&#43;p)\frac{dQ}{dx}&#43;(\alpha^2&#43;p\alpha&#43;q)Q=P_n(x) $$
+  $\alpha^2&#43;p\alpha&#43;q\neq 0$时，即$\alpha$不是特征方程的根（零重根），则$Q$为n次多项式，$\widetilde{y}=Q_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p\neq 0$时，即$\alpha$是特征方程的单根（一重根），则$Q$为n&#43;1次多项式，可取定$Q_{n&#43;1}(x)=xQ_n(x)$，$\widetilde{y}=xQ_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p=0$时，即$\alpha$是特征方程的二重根，则$Q$为n&#43;2次多项式，可取定$Q_{n&#43;2}(x)=x^2Q_n(x)$，$\widetilde{y}=x^2Q_n(x)e^{\alpha x}$，待定系数法求解。
+  综上所述，特解的形式为$\widetilde{y}=x^kQ_n(x)e^{\alpha x}$，$\alpha$是特征方程的k重根。
+情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$ 解法一（复值函数求导） 考察方程$L[y]=P_n(x)e^{\alpha x}\cos\beta x&#43;iP_n(x)e^{\alpha x}\sin\beta x=P_n(x)e^{\alpha&#43;i\beta}$，设其特解为$\widetilde{y}=\widetilde{y}_ 1&#43;i\widetilde{y}_ 2$，'>
+<meta property='og:url' content='https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/'>
+<meta property='og:site_name' content='Site of Nosta the altered'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='微分算子' /><meta property='article:tag' content='特征方程' /><meta property='article:tag' content='复根' /><meta property='article:published_time' content='2022-01-20T15:21:03&#43;00:00'/><meta property='article:modified_time' content='2022-01-20T15:21:03&#43;00:00'/>
+<meta name="twitter:title" content="二阶常系数线性微分方程">
+<meta name="twitter:description" content="二阶常系数齐次线性微分方程 形如$\frac{d^2y}{dx^2}&#43;p\frac{dy}{dx}&#43;qy=0$的方程，其解应存在求导形式不变性，如指数函数$y=e^{rx}$。
+ 本节中记算子$L=\frac{d^2}{dx^2}&#43;p\frac{d}{dx}&#43;q$。
+ 其特征方程为：$r^2&#43;pr&#43;q=0$，则
+  $p^2-4q&amp;gt;0$时，特征方程有不同实根$r_1,r_2$，对应线性无关解$y_1=e^{r_1x},y_2=e^{r_2x}$，此时原方程通解$y=C_1e^{r_1x}&#43;C_2e^{r_2x}$。
+  $p^2-4q=0$时，特征方程有二重实根$r_0$，对应解$y_1=e^{r_0x}$。考虑与之线性无关的解$y_2=u(x)e^{r_0x}$，$u(x)$不为常数，则
+  $$ e^{r_0x}\left[\frac{d^2u}{dx^2}&#43;(2r_0&#43;p)\frac{du}{dx}&#43;(r_0^2&#43;pr_0&#43;q)u\right]=0\newline \frac{d^2u}{dx^2}=0, u=C_1x&#43;C_2 $$
+取定$y_2=xe^{r_0x}$，此时原方程通解$y=(C_1&#43;C_2x)e^{r_0x}$。
+$p^2-4q&amp;lt;0$时，特征方程有共轭复根$r_1,r_2=\alpha\pm i\beta$，由此产生解$y_1,y_2=e^{\alpha x}(\cos\beta x\pm i\sin\beta x)$  取定$y_1^\star=\frac{y_1&#43;y_2}{2}, y_2^\star=\frac{y_1-y_2}{2i}$，则方程通解$y=e^{\alpha x}(C_1\cos\beta x&#43;C_2\sin\beta x)$。
+二阶常系数非齐次线性微分方程 情形一：$f(x)=P_n(x)e^{\alpha x}$ 猜想$L[y]=P_n(x)e^{\alpha x}$的一个特解为$\widetilde{y}=Q(x)e^{\alpha x}$，代入方程，则
+$$ \frac{d^2Q}{dx^2}&#43;(2\alpha&#43;p)\frac{dQ}{dx}&#43;(\alpha^2&#43;p\alpha&#43;q)Q=P_n(x) $$
+  $\alpha^2&#43;p\alpha&#43;q\neq 0$时，即$\alpha$不是特征方程的根（零重根），则$Q$为n次多项式，$\widetilde{y}=Q_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p\neq 0$时，即$\alpha$是特征方程的单根（一重根），则$Q$为n&#43;1次多项式，可取定$Q_{n&#43;1}(x)=xQ_n(x)$，$\widetilde{y}=xQ_n(x)e^{\alpha x}$，待定系数法求解。
+  $\alpha^2&#43;p\alpha&#43;q=0,2\alpha&#43;p=0$时，即$\alpha$是特征方程的二重根，则$Q$为n&#43;2次多项式，可取定$Q_{n&#43;2}(x)=x^2Q_n(x)$，$\widetilde{y}=x^2Q_n(x)e^{\alpha x}$，待定系数法求解。
+  综上所述，特解的形式为$\widetilde{y}=x^kQ_n(x)e^{\alpha x}$，$\alpha$是特征方程的k重根。
+情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$ 解法一（复值函数求导） 考察方程$L[y]=P_n(x)e^{\alpha x}\cos\beta x&#43;iP_n(x)e^{\alpha x}\sin\beta x=P_n(x)e^{\alpha&#43;i\beta}$，设其特解为$\widetilde{y}=\widetilde{y}_ 1&#43;i\widetilde{y}_ 2$，">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hubb9c6dbf30a498d53907e8b9c7b2de8d_30468_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Site of Nosta the altered</a></h1>
+            <h2 class="site-description">El la subtitile.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/rhosta/rhosta.gitHub.io'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:nosta@qq.com'
+                        target="_blank"
+                        title="Mail me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
+                第二学期
+            </a>
+        
+            <a href="/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                常微分方程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">二阶常系数线性微分方程</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 20, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="二阶常系数齐次线性微分方程">二阶常系数齐次线性微分方程</h2>
+<p>形如$\frac{d^2y}{dx^2}+p\frac{dy}{dx}+qy=0$的方程，其解应存在求导形式不变性，如指数函数$y=e^{rx}$。</p>
+<blockquote>
+<p>本节中记算子$L=\frac{d^2}{dx^2}+p\frac{d}{dx}+q$。</p>
+</blockquote>
+<p>其<strong>特征方程</strong>为：$r^2+pr+q=0$，则</p>
+<ol>
+<li>
+<p>$p^2-4q&gt;0$时，特征方程有不同实根$r_1,r_2$，对应线性无关解$y_1=e^{r_1x},y_2=e^{r_2x}$，此时原方程<strong>通解</strong>$y=C_1e^{r_1x}+C_2e^{r_2x}$。</p>
+</li>
+<li>
+<p>$p^2-4q=0$时，特征方程有二重实根$r_0$，对应解$y_1=e^{r_0x}$。考虑与之线性无关的解$y_2=u(x)e^{r_0x}$，$u(x)$不为常数，则</p>
+</li>
+</ol>
+<p>$$
+e^{r_0x}\left[\frac{d^2u}{dx^2}+(2r_0+p)\frac{du}{dx}+(r_0^2+pr_0+q)u\right]=0\newline
+\frac{d^2u}{dx^2}=0, u=C_1x+C_2
+$$</p>
+<p>取定$y_2=xe^{r_0x}$，此时原方程<strong>通解</strong>$y=(C_1+C_2x)e^{r_0x}$。</p>
+<ol start="3">
+<li>$p^2-4q&lt;0$时，特征方程有共轭复根$r_1,r_2=\alpha\pm i\beta$，由此产生解$y_1,y_2=e^{\alpha x}(\cos\beta x\pm i\sin\beta x)$</li>
+</ol>
+<p>取定$y_1^\star=\frac{y_1+y_2}{2}, y_2^\star=\frac{y_1-y_2}{2i}$，则方程<strong>通解</strong>$y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$。</p>
+<h2 id="二阶常系数非齐次线性微分方程">二阶常系数非齐次线性微分方程</h2>
+<h3 id="情形一fxp_nxealpha-x">情形一：$f(x)=P_n(x)e^{\alpha x}$</h3>
+<p>猜想$L[y]=P_n(x)e^{\alpha x}$的一个特解为$\widetilde{y}=Q(x)e^{\alpha x}$，代入方程，则</p>
+<p>$$
+\frac{d^2Q}{dx^2}+(2\alpha+p)\frac{dQ}{dx}+(\alpha^2+p\alpha+q)Q=P_n(x)
+$$</p>
+<ol>
+<li>
+<p>$\alpha^2+p\alpha+q\neq 0$时，即$\alpha$不是特征方程的根（零重根），则$Q$为n次多项式，$\widetilde{y}=Q_n(x)e^{\alpha x}$，待定系数法求解。</p>
+</li>
+<li>
+<p>$\alpha^2+p\alpha+q=0,2\alpha+p\neq 0$时，即$\alpha$是特征方程的单根（一重根），则$Q$为n+1次多项式，可取定$Q_{n+1}(x)=xQ_n(x)$，$\widetilde{y}=xQ_n(x)e^{\alpha x}$，待定系数法求解。</p>
+</li>
+<li>
+<p>$\alpha^2+p\alpha+q=0,2\alpha+p=0$时，即$\alpha$是特征方程的二重根，则$Q$为n+2次多项式，可取定$Q_{n+2}(x)=x^2Q_n(x)$，$\widetilde{y}=x^2Q_n(x)e^{\alpha x}$，待定系数法求解。</p>
+</li>
+</ol>
+<p>综上所述，<strong>特解</strong>的形式为$\widetilde{y}=x^kQ_n(x)e^{\alpha x}$，$\alpha$是特征方程的k重根。</p>
+<h3 id="情形二fxp_nxealpha-xcosbeta-x或者fxp_nxealpha-xsinbeta-x">情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$</h3>
+<h4 id="解法一复值函数求导">解法一（复值函数求导）</h4>
+<p>考察方程$L[y]=P_n(x)e^{\alpha x}\cos\beta x+iP_n(x)e^{\alpha x}\sin\beta x=P_n(x)e^{\alpha+i\beta}$，设其特解为$\widetilde{y}=\widetilde{y}_ 1+i\widetilde{y}_ 2$，</p>
+<p>则$\widetilde{y}_ 1,\widetilde{y}_ 2$分别是$L[y]=P_n(x)e^{\alpha x}\cos\beta x$和$L[y]=P_n(x)e^{\alpha x}\sin\beta x$的特解。</p>
+<p>示例：求方程$\frac{d^2y}{dx^2}-y=\sin x$的通解。</p>
+<p>对应齐次方程$\frac{d^2y}{dx^2}-y=0$的特征方程有根$r=\pm 1$，通解为$Y=C_1e^{x}+C_2e^{-x}$。</p>
+<p>考虑方程$\frac{d^2y}{dx^2}-y=e^{(0+i)x}$，由于$i$为零重根，故特解形式$\widetilde{y}=Cx^0\times 1\times e^{ix}$，代入之</p>
+<p>$$
+\frac{d\widetilde{y}}{dx}=iCe^{ix},\frac{d^2\widetilde{y}}{dx^2}=-Ce^{ix}\newline
+-Ce^{ix}-Ce^{ix}=e^{ix}\Rightarrow C=\frac{-1}{2}, \widetilde{y}=\frac{-e^{ix}}{2}
+$$</p>
+<p>又$\frac{-e^{ix}}{2}=\frac{-1}{2}(\cos x+i\sin x)$，故$\widetilde{y}^\star=-\frac{1}{2}\sin x$，故原方程通解$y=Y+\widetilde{y}^\star$</p>
+<p><strong>TIPS：一定要注意实部与虚部的分离</strong></p>
+<h4 id="解法二公式法">解法二（公式法）</h4>
+<p>考虑方程$L[y]=\left[P_n^1(x)\cos\beta x+P_n^2(x)\sin\beta x\right]e^{\alpha x}$，设$\alpha$是特征方程的$k(k=0,1)$重根，$m=\max{n,l}$，</p>
+<p>则方程的特解形式为$\widetilde{y}=x^k\left[P_m^1(x)\cos\beta x+P_m^2(x)\sin\beta x\right]e^{\alpha x}$。</p>
+<p><del><a class="link" href="https://www.icourse163.org/learn/ZJU-1206672801?tid=1451623470#/learn/content?type=detail&amp;id=1223478858&amp;cid=1235650121"  target="_blank" rel="noopener"
+    >推导</a>摸了</del></p>
+<h2 id="补充">补充</h2>
+<p><img src="/images/%e4%ba%8c%e9%98%b6%e2%80%a6%e8%a7%a3%e6%89%a9%e5%b1%95.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="/images/%e4%ba%8c%e9%98%b6%e2%80%a6%e8%a7%a3%e6%80%9d%e8%80%83.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90/">微分算子</a>
+        
+            <a href="/tags/%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B/">特征方程</a>
+        
+            <a href="/tags/%E5%A4%8D%E6%A0%B9/">复根</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E9%98%B6%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二阶线性微分方程解的结构</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">K1,K2的证明（未完成）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常系数线性微分方程组的解法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微分方程组与线性微分方程组</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二阶变系数线性微分方程的一些解法</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Site of Nosta the altered
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.9.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#二阶常系数齐次线性微分方程">二阶常系数齐次线性微分方程</a></li>
+    <li><a href="#二阶常系数非齐次线性微分方程">二阶常系数非齐次线性微分方程</a>
+      <ol>
+        <li><a href="#情形一fxp_nxealpha-x">情形一：$f(x)=P_n(x)e^{\alpha x}$</a></li>
+        <li><a href="#情形二fxp_nxealpha-xcosbeta-x或者fxp_nxealpha-xsinbeta-x">情形二：$f(x)=P_n(x)e^{\alpha x}\cos\beta x$或者$f(x)=P_n(x)e^{\alpha x}\sin\beta x$</a>
+          <ol>
+            <li><a href="#解法一复值函数求导">解法一（复值函数求导）</a></li>
+            <li><a href="#解法二公式法">解法二（公式法）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#补充">补充</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

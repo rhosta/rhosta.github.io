@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>消元法 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E6%B6%88%E5%85%83%E6%B3%95/</link>
+        <description>Recent content in 消元法 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 25 Jan 2022 13:39:51 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E6%B6%88%E5%85%83%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>常系数线性微分方程组的解法</title>
+        <link>https://rhosta.github.io/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/</link>
+        <pubDate>Tue, 25 Jan 2022 13:39:51 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/</guid>
+        <description>&lt;p&gt;所谓常系数线性微分方程组即$\overline{\overline{A}}(t)=\overline{\overline{A}}$。&lt;/p&gt;
+&lt;h2 id=&#34;常系数齐次线性微分方程组&#34;&gt;常系数齐次线性微分方程组&lt;/h2&gt;
+&lt;p&gt;标准形式为$\frac{d\vec x}{dt}=\overline{\overline{A}}\vec x$ ，转化为求特征结构问题。&lt;/p&gt;
+&lt;p&gt;设存在解$\vec x(t)=\vec ve^{\lambda t}$，$\vec v$是待定常向量，则$\frac{d\vec x}{dt}=\lambda\vec ve^{\lambda t}$，即$\overline{\overline{A}}\vec v=\lambda\vec v$。&lt;/p&gt;
+&lt;p&gt;由此知$\lambda$为矩阵特征值，$\vec v$为对应特征向量，具体情形如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;【重点】若$\overline{\overline{A}}$的所有特征根都为单根，记为$\lambda_1,\lambda_2,\cdots,\lambda_n$，对应的n个线性无关（由不同特征值对应特征向量的线性无关性保证） 解${\vec v_i}_ {i=1}^n$构成一个&lt;strong&gt;基本解组&lt;/strong&gt;，则原一阶线性方程组通解为&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+\vec x(t)=\sum_{i=1}^nc_i\vec v_ie^{\lambda_i t}=(\vec v_1e^{\lambda_1},\vec v_2e^{\lambda_2},\cdots,\vec v_ne^{\lambda_n})\vec c
+$$&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://rhosta.github.io/2022/01/20/%e4%ba%8c%e9%98%b6%e5%b8%b8%e7%b3%bb%e6%95%b0%e7%ba%bf%e6%80%a7%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e8%a7%a3&#34; &gt;比较&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;如特征根为复数单根（必成对出现），互为共轭的特征根对应特征向量也互为共轭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如特征根特征根为重根，设$\lambda_0$是k重特征根，则对应基本解的形式为&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+\vec x^{(i)}(t)=(\vec v_0^{(i)}+\frac{t}{1!}\vec v_1^{(i)}+\frac{t^2}{2!}\vec v_2^{(i)}+\cdots+\frac{t^{k-1}}{(k-1)!}\vec v_{k-1}^{(i)})e^{\lambda_0 t}\newline
+i=1,2,\cdots,k
+$$&lt;/p&gt;
+&lt;p&gt;其中的$\vec v_0^{(i)}$是$\lambda_0$对应的第$i$个&lt;strong&gt;广义特征向量&lt;/strong&gt;（即方程$(\overline{\overline A}-\lambda_0\overline{\overline{I}})^k\vec v=\vec 0$的一组解，之间线性无关），且&lt;/p&gt;
+&lt;p&gt;$$
+\vec v_j^{(i)}=(\overline{\overline{A}}-\lambda_0\overline{\overline I})\vec v_{j-1}^{(i)},j&amp;gt;0
+$$&lt;/p&gt;
+&lt;h2 id=&#34;常系数非齐次线性微分方程组&#34;&gt;常系数非齐次线性微分方程组&lt;/h2&gt;
+&lt;p&gt;类似地，先解出对应齐次方程组$\frac{d\vec x}{dt}=\overline{\overline{A}}\vec x$的通解$\vec X(t)$，构造&lt;strong&gt;基本解矩阵&lt;/strong&gt;$\overline{\overline{X}}(t)$（$\vec X(t)=\overline{\overline{X}}(t)\vec c$）。&lt;/p&gt;
+&lt;p&gt;作&lt;strong&gt;常数变易&lt;/strong&gt;，设非其次方程组的解$\vec x(t)=\overline{\overline{X}}(t)\vec c(t)$, 代入即&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\overline{\overline{X}}&#39;(t)\vec c(t)+\overline{\overline{X}}(t)\vec c&#39;(t)&amp;amp;=\overline{\overline{A}}\overline{\overline{X}}(t)\vec c(t)+\vec f(t)\newline
+&amp;amp;=\overline{\overline{X}}&#39;(t)\vec c(t)+\vec f(t)\newline
+\overline{\overline{X}}(t)\vec c&#39;(t)=\vec f(t)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;高斯消元解出$\vec c&#39;(t)$后积分即可。&lt;/p&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
+&lt;p&gt;求解如下方程&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d\vec x}{dt}=\begin{pmatrix}1&amp;amp;0&amp;amp;0\newline2&amp;amp;1&amp;amp;-2\newline3&amp;amp;2&amp;amp;1\end{pmatrix}\vec x+\begin{pmatrix}0\newline0\newline e^t\cos2t\end{pmatrix},\vec x(0)=\begin{pmatrix}0\newline0\newline1\end{pmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;【提示】在对$\lambda_{2,3}=1\pm 2i$求解时，有$\vec v_2=\begin{pmatrix}0\newline1\newline-i\end{pmatrix}$，$\vec v_3=\begin{pmatrix}0\newline 1\newline i\end{pmatrix}$。&lt;/p&gt;
+&lt;p&gt;注意到$\vec x_2=\vec v_2e^{\lambda_2 t}=e^t\left[\begin{pmatrix}0\newline\cos2t\newline\sin2t\end{pmatrix}+i\begin{pmatrix}0\newline\sin2t\newline-\cos2t\end{pmatrix}\right]$，$\vec x_3=\overline{\vec v_2}e^{\overline{\lambda_2}t}=\overline{\vec x_2}$，&lt;strong&gt;分别取其实部虚部&lt;/strong&gt;，则基本解矩阵如下，&lt;/p&gt;
+&lt;p&gt;$$
+e^t\begin{pmatrix}
+2&amp;amp;0&amp;amp;0\newline
+-3&amp;amp;\cos2t&amp;amp;\sin2t\newline
+2&amp;amp;\sin2t&amp;amp;-\cos2t
+\end{pmatrix}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;消元法解二元常系数一阶微分方程组&#34;&gt;消元法解二元常系数一阶微分方程组&lt;/h2&gt;
+&lt;p&gt;原理：消元升阶转化为二阶（齐次/非其次）常系数线性微分方程来解。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

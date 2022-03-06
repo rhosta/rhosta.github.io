@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='全微分方程概念 形如$P(x,y)dx&#43;Q(x,y)dy=0$的方程，存在二元函数$u(x,y)$使得$du(x,y)=P(x,y)dx&#43;Q(x,y)dy$，则称该方程为 全微分方程，即$du(x,y)=0$，其解$u(x,y)=C$为方程的原函数。
+全微分方程性质 $Pdx&#43;Qdy$为全微分等价于$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$。（曲线积分与路径无关）
+$du=Pdx&#43;Qdy$等价于$\frac{\partial u}{\partial x}=P, \frac{\partial u}{\partial y}=Q$（全微分形式不变性）
+示例1 求以下方程的通解
+$$ \frac{2xy&#43;1}{y}dx&#43;\frac{y-x}{y^2}dy=0 $$
+偏导数角度 由$\frac{\partial \frac{2xy&#43;1}{y}}{\partial y}=\frac{\partial \frac{y-x}{y^2}}{\partial x}=-\frac{1}{y^2}$知方程为全微分方程，设为$u(x,y)$。
+由$\frac{\partial u}{\partial x}=\frac{2xy&#43;1}{y}$，则$u=x^2&#43;\frac{x}{y}&#43;C(y)$。
+又$\frac{\partial u}{\partial y}=\frac{y-x}{y^2}$，则$C&#39;(y)=\frac{1}{y}$。
+进而$u(x,y)=x^2&#43;\frac{x}{y}&#43;\ln|y|&#43;C_1$。
+曲线积分法 取定$u(x,y)=\int_{(0,1)}^{(x,y)}Pdx&#43;Qdy$（下限$(x_0,y_0)=(0,1)$）,则
+$$ u(x,y)=\int_{(0,1)}^{(x,1)}Pdx&#43;Qdy&#43;\int_{(x,1) }^{(x,y)}Pdx&#43;Qdy\newline =\int_{(0,1)}^{(x,1)}\frac{2xy&#43;1}{y}dx&#43;\int_{(x,1) }^{(x,y)}\frac{y-x}{y^2}dy\newline =x^2&#43;\frac{x}{y}&#43;\ln|y| $$
+分项组合凑微分法 利用等式$du=u&amp;rsquo;du$和$duv=udv&#43;vdu$，由
+$$ Pdx&#43;Qdy=2xdx&#43;\frac{1}{y}dx&#43;\frac{1}{y}dy-\frac{x}{y^2}dy\newline =2xdx&#43;\frac{1}{y}dy&#43;(\frac{1}{y}dx&#43;xd\frac{1}{y})\newline =dx^2&#43;d\ln|y|&#43;d\frac{x}{y} $$
+故$u=x^2&#43;\ln|y|&#43;\frac{x}{y}&#43;C_1$
+ 积分因子概念 对任意非全微分方程$Pdx&#43;Qdy=0$，存在函数$\mu(x,y)\neq 0$使得$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则称$\mu(x,y)$为原方程的一个积分因子。
+积分因子求法 由定义$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则$\frac{\partial \mu P}{\partial y}=\frac{\partial \mu Q}{\partial x}$，即
+$$ \frac{\partial \mu}{\partial y}P&#43;\mu\frac{\partial P}{\partial y}= \frac{\partial \mu}{\partial x}Q&#43;\mu\frac{\partial Q}{\partial x}\newline \frac{\partial \mu}{\partial y}P-\frac{\partial \mu}{\partial x}Q= \mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}) $$'><title>全微分方程与积分因子</title>
+
+<link rel='canonical' href='https://rhosta.github.io/p/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='全微分方程与积分因子'>
+<meta property='og:description' content='全微分方程概念 形如$P(x,y)dx&#43;Q(x,y)dy=0$的方程，存在二元函数$u(x,y)$使得$du(x,y)=P(x,y)dx&#43;Q(x,y)dy$，则称该方程为 全微分方程，即$du(x,y)=0$，其解$u(x,y)=C$为方程的原函数。
+全微分方程性质 $Pdx&#43;Qdy$为全微分等价于$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$。（曲线积分与路径无关）
+$du=Pdx&#43;Qdy$等价于$\frac{\partial u}{\partial x}=P, \frac{\partial u}{\partial y}=Q$（全微分形式不变性）
+示例1 求以下方程的通解
+$$ \frac{2xy&#43;1}{y}dx&#43;\frac{y-x}{y^2}dy=0 $$
+偏导数角度 由$\frac{\partial \frac{2xy&#43;1}{y}}{\partial y}=\frac{\partial \frac{y-x}{y^2}}{\partial x}=-\frac{1}{y^2}$知方程为全微分方程，设为$u(x,y)$。
+由$\frac{\partial u}{\partial x}=\frac{2xy&#43;1}{y}$，则$u=x^2&#43;\frac{x}{y}&#43;C(y)$。
+又$\frac{\partial u}{\partial y}=\frac{y-x}{y^2}$，则$C&#39;(y)=\frac{1}{y}$。
+进而$u(x,y)=x^2&#43;\frac{x}{y}&#43;\ln|y|&#43;C_1$。
+曲线积分法 取定$u(x,y)=\int_{(0,1)}^{(x,y)}Pdx&#43;Qdy$（下限$(x_0,y_0)=(0,1)$）,则
+$$ u(x,y)=\int_{(0,1)}^{(x,1)}Pdx&#43;Qdy&#43;\int_{(x,1) }^{(x,y)}Pdx&#43;Qdy\newline =\int_{(0,1)}^{(x,1)}\frac{2xy&#43;1}{y}dx&#43;\int_{(x,1) }^{(x,y)}\frac{y-x}{y^2}dy\newline =x^2&#43;\frac{x}{y}&#43;\ln|y| $$
+分项组合凑微分法 利用等式$du=u&amp;rsquo;du$和$duv=udv&#43;vdu$，由
+$$ Pdx&#43;Qdy=2xdx&#43;\frac{1}{y}dx&#43;\frac{1}{y}dy-\frac{x}{y^2}dy\newline =2xdx&#43;\frac{1}{y}dy&#43;(\frac{1}{y}dx&#43;xd\frac{1}{y})\newline =dx^2&#43;d\ln|y|&#43;d\frac{x}{y} $$
+故$u=x^2&#43;\ln|y|&#43;\frac{x}{y}&#43;C_1$
+ 积分因子概念 对任意非全微分方程$Pdx&#43;Qdy=0$，存在函数$\mu(x,y)\neq 0$使得$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则称$\mu(x,y)$为原方程的一个积分因子。
+积分因子求法 由定义$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则$\frac{\partial \mu P}{\partial y}=\frac{\partial \mu Q}{\partial x}$，即
+$$ \frac{\partial \mu}{\partial y}P&#43;\mu\frac{\partial P}{\partial y}= \frac{\partial \mu}{\partial x}Q&#43;\mu\frac{\partial Q}{\partial x}\newline \frac{\partial \mu}{\partial y}P-\frac{\partial \mu}{\partial x}Q= \mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}) $$'>
+<meta property='og:url' content='https://rhosta.github.io/p/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/'>
+<meta property='og:site_name' content='Site of Nosta the altered'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='全微分方程' /><meta property='article:tag' content='曲线积分' /><meta property='article:tag' content='积分因子' /><meta property='article:published_time' content='2022-01-15T10:15:23&#43;00:00'/><meta property='article:modified_time' content='2022-01-15T10:15:23&#43;00:00'/>
+<meta name="twitter:title" content="全微分方程与积分因子">
+<meta name="twitter:description" content="全微分方程概念 形如$P(x,y)dx&#43;Q(x,y)dy=0$的方程，存在二元函数$u(x,y)$使得$du(x,y)=P(x,y)dx&#43;Q(x,y)dy$，则称该方程为 全微分方程，即$du(x,y)=0$，其解$u(x,y)=C$为方程的原函数。
+全微分方程性质 $Pdx&#43;Qdy$为全微分等价于$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$。（曲线积分与路径无关）
+$du=Pdx&#43;Qdy$等价于$\frac{\partial u}{\partial x}=P, \frac{\partial u}{\partial y}=Q$（全微分形式不变性）
+示例1 求以下方程的通解
+$$ \frac{2xy&#43;1}{y}dx&#43;\frac{y-x}{y^2}dy=0 $$
+偏导数角度 由$\frac{\partial \frac{2xy&#43;1}{y}}{\partial y}=\frac{\partial \frac{y-x}{y^2}}{\partial x}=-\frac{1}{y^2}$知方程为全微分方程，设为$u(x,y)$。
+由$\frac{\partial u}{\partial x}=\frac{2xy&#43;1}{y}$，则$u=x^2&#43;\frac{x}{y}&#43;C(y)$。
+又$\frac{\partial u}{\partial y}=\frac{y-x}{y^2}$，则$C&#39;(y)=\frac{1}{y}$。
+进而$u(x,y)=x^2&#43;\frac{x}{y}&#43;\ln|y|&#43;C_1$。
+曲线积分法 取定$u(x,y)=\int_{(0,1)}^{(x,y)}Pdx&#43;Qdy$（下限$(x_0,y_0)=(0,1)$）,则
+$$ u(x,y)=\int_{(0,1)}^{(x,1)}Pdx&#43;Qdy&#43;\int_{(x,1) }^{(x,y)}Pdx&#43;Qdy\newline =\int_{(0,1)}^{(x,1)}\frac{2xy&#43;1}{y}dx&#43;\int_{(x,1) }^{(x,y)}\frac{y-x}{y^2}dy\newline =x^2&#43;\frac{x}{y}&#43;\ln|y| $$
+分项组合凑微分法 利用等式$du=u&amp;rsquo;du$和$duv=udv&#43;vdu$，由
+$$ Pdx&#43;Qdy=2xdx&#43;\frac{1}{y}dx&#43;\frac{1}{y}dy-\frac{x}{y^2}dy\newline =2xdx&#43;\frac{1}{y}dy&#43;(\frac{1}{y}dx&#43;xd\frac{1}{y})\newline =dx^2&#43;d\ln|y|&#43;d\frac{x}{y} $$
+故$u=x^2&#43;\ln|y|&#43;\frac{x}{y}&#43;C_1$
+ 积分因子概念 对任意非全微分方程$Pdx&#43;Qdy=0$，存在函数$\mu(x,y)\neq 0$使得$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则称$\mu(x,y)$为原方程的一个积分因子。
+积分因子求法 由定义$\mu Pdx&#43;\mu Qdy=0$是全微分方程，则$\frac{\partial \mu P}{\partial y}=\frac{\partial \mu Q}{\partial x}$，即
+$$ \frac{\partial \mu}{\partial y}P&#43;\mu\frac{\partial P}{\partial y}= \frac{\partial \mu}{\partial x}Q&#43;\mu\frac{\partial Q}{\partial x}\newline \frac{\partial \mu}{\partial y}P-\frac{\partial \mu}{\partial x}Q= \mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}) $$">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hubb9c6dbf30a498d53907e8b9c7b2de8d_30468_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Site of Nosta the altered</a></h1>
+            <h2 class="site-description">El la subtitile.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/rhosta/rhosta.gitHub.io'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:nosta@qq.com'
+                        target="_blank"
+                        title="Mail me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
+                第二学期
+            </a>
+        
+            <a href="/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                常微分方程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/">全微分方程与积分因子</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 15, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="全微分方程概念">全微分方程概念</h2>
+<p>形如$P(x,y)dx+Q(x,y)dy=0$的方程，存在二元函数$u(x,y)$使得$du(x,y)=P(x,y)dx+Q(x,y)dy$，则称该方程为 <strong>全微分方程</strong>，即$du(x,y)=0$，其解$u(x,y)=C$为方程的原函数。</p>
+<h2 id="全微分方程性质">全微分方程性质</h2>
+<p>$Pdx+Qdy$为全微分等价于$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$。（曲线积分与路径无关）</p>
+<p>$du=Pdx+Qdy$等价于$\frac{\partial u}{\partial x}=P, \frac{\partial u}{\partial y}=Q$（全微分形式不变性）</p>
+<h2 id="示例1">示例1</h2>
+<p>求以下方程的通解</p>
+<p>$$
+\frac{2xy+1}{y}dx+\frac{y-x}{y^2}dy=0
+$$</p>
+<h3 id="偏导数角度">偏导数角度</h3>
+<p>由$\frac{\partial \frac{2xy+1}{y}}{\partial y}=\frac{\partial \frac{y-x}{y^2}}{\partial x}=-\frac{1}{y^2}$知方程为全微分方程，设为$u(x,y)$。</p>
+<p>由$\frac{\partial u}{\partial x}=\frac{2xy+1}{y}$，则$u=x^2+\frac{x}{y}+C(y)$。</p>
+<p>又$\frac{\partial u}{\partial y}=\frac{y-x}{y^2}$，则$C'(y)=\frac{1}{y}$。</p>
+<p>进而$u(x,y)=x^2+\frac{x}{y}+\ln|y|+C_1$。</p>
+<h3 id="曲线积分法">曲线积分法</h3>
+<p>取定$u(x,y)=\int_{(0,1)}^{(x,y)}Pdx+Qdy$（下限$(x_0,y_0)=(0,1)$）,则</p>
+<p>$$
+u(x,y)=\int_{(0,1)}^{(x,1)}Pdx+Qdy+\int_{(x,1)
+}^{(x,y)}Pdx+Qdy\newline
+=\int_{(0,1)}^{(x,1)}\frac{2xy+1}{y}dx+\int_{(x,1)
+}^{(x,y)}\frac{y-x}{y^2}dy\newline
+=x^2+\frac{x}{y}+\ln|y|
+$$</p>
+<h3 id="分项组合凑微分法">分项组合凑微分法</h3>
+<p>利用等式$du=u&rsquo;du$和$duv=udv+vdu$，由</p>
+<p>$$
+Pdx+Qdy=2xdx+\frac{1}{y}dx+\frac{1}{y}dy-\frac{x}{y^2}dy\newline
+=2xdx+\frac{1}{y}dy+(\frac{1}{y}dx+xd\frac{1}{y})\newline
+=dx^2+d\ln|y|+d\frac{x}{y}
+$$</p>
+<p>故$u=x^2+\ln|y|+\frac{x}{y}+C_1$</p>
+<hr>
+<h2 id="积分因子概念">积分因子概念</h2>
+<p>对任意非全微分方程$Pdx+Qdy=0$，存在函数$\mu(x,y)\neq 0$使得$\mu Pdx+\mu Qdy=0$是全微分方程，则称$\mu(x,y)$为原方程的一个<strong>积分因子</strong>。</p>
+<h2 id="积分因子求法">积分因子求法</h2>
+<p>由定义$\mu Pdx+\mu Qdy=0$是全微分方程，则$\frac{\partial \mu P}{\partial y}=\frac{\partial \mu Q}{\partial x}$，即</p>
+<p>$$
+\frac{\partial \mu}{\partial y}P+\mu\frac{\partial P}{\partial y}=
+\frac{\partial \mu}{\partial x}Q+\mu\frac{\partial Q}{\partial x}\newline
+\frac{\partial \mu}{\partial y}P-\frac{\partial \mu}{\partial x}Q=
+\mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})
+$$</p>
+<p>考虑$\mu=\mu(x)$, 则</p>
+<p>$$
+-\frac{d\mu}{dx}Q=\mu(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})\newline
+\frac{d\mu}{\mu}=\frac{1}{Q}(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x})
+$$</p>
+<p>若右式为关于$x$的一元函数，记之为$\varphi(x)$，则$\mu=Ce^{\int \varphi(x)dx}$，略去常数即$\mu=e^{\int \varphi(x)dx}$。</p>
+<p>同理，若考虑$\mu=\mu(y)$，则$\mu=Ce^{\int \psi(y)dy}$，其中$\psi(y)=\frac{-1}{P}(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x})$。</p>
+<h2 id="示例2">示例2</h2>
+<p>求方程$ydx-xdy=0$的通解</p>
+<p>由$\frac{\partial y}{\partial y}=1, \frac{\partial(-x)}{\partial x}=-1$知，方程不是全微分方程。</p>
+<p>设$\varphi(x)=\frac{1}{-x}\left[1-(-1)\right]=\frac{-2}{x}$，则可取定积分因子$\mu=e^{\int \frac{-2}{x}dx}=\frac{1}{x^2}$，</p>
+<p>对于同解全微分方程$\mu ydx-\mu xdy=0$，即$0=\frac{xdy-ydx}{x^2}=d\frac{y}{x}$</p>
+<p>显然通解为$u=\frac{y}{x}=C$，即$y=Cx$。</p>
+<p>另外，$\mu=\frac{-2}{y},\frac{1}{xy},\frac{1}{x^2+y^2},\frac{1}{x^2-y^2}$也是积分因子。利用不同的积分因子所求解之形式也是不同的。</p>
+<h2 id="示例3">示例3</h2>
+<p><strong>常用全微分公式</strong></p>
+<p>$$
+dxy=xdy+ydx\newline
+d\frac{x}{y}=\frac{ydx-xdy}{y^2}\newline
+d\arctan\frac{x}{y}=\frac{1}{1+\frac{x}{y}^2}\frac{ydx-xdy}{y^2}=\frac{ydx-xdy}{x^2+y^2}
+$$</p>
+<p>求方程$(x^2y^3+y)dx+(x^3y^2-x)dy=0$的通解。</p>
+<p>分项组合后，方程化为$x^2y^3dx+x^3y^2dy+(ydx-xdy)=0$，观察知$\mu=\frac{1}{xy}$是方程的一个积分因子。</p>
+<p>相应同解全微分方程为$xy^2dx+x^2ydy+\frac{dx}{x}-\frac{dy}{y}=0$，即$\frac{1}{2}dx^2y^2+d\ln|x|-d\ln|y|=0$。</p>
+<p>故方程通解为$\frac{x^2y^2}{2}+\ln\left|\frac{x}{y}\right|=C$。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">全微分方程</a>
+        
+            <a href="/tags/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/">曲线积分</a>
+        
+            <a href="/tags/%E7%A7%AF%E5%88%86%E5%9B%A0%E5%AD%90/">积分因子</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">K1,K2的证明（未完成）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常系数线性微分方程组的解法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微分方程组与线性微分方程组</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二阶变系数线性微分方程的一些解法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二阶常系数线性微分方程</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Site of Nosta the altered
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.9.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#全微分方程概念">全微分方程概念</a></li>
+    <li><a href="#全微分方程性质">全微分方程性质</a></li>
+    <li><a href="#示例1">示例1</a>
+      <ol>
+        <li><a href="#偏导数角度">偏导数角度</a></li>
+        <li><a href="#曲线积分法">曲线积分法</a></li>
+        <li><a href="#分项组合凑微分法">分项组合凑微分法</a></li>
+      </ol>
+    </li>
+    <li><a href="#积分因子概念">积分因子概念</a></li>
+    <li><a href="#积分因子求法">积分因子求法</a></li>
+    <li><a href="#示例2">示例2</a></li>
+    <li><a href="#示例3">示例3</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

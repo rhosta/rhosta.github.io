@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>平面极坐标系 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E5%B9%B3%E9%9D%A2%E6%9E%81%E5%9D%90%E6%A0%87%E7%B3%BB/</link>
+        <description>Recent content in 平面极坐标系 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 13 Feb 2022 13:39:51 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E5%B9%B3%E9%9D%A2%E6%9E%81%E5%9D%90%E6%A0%87%E7%B3%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>K1,K2的证明（未完成）</title>
+        <link>https://rhosta.github.io/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
+        <pubDate>Sun, 13 Feb 2022 13:39:51 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
+        <description>&lt;h2 id=&#34;预备知识&#34;&gt;预备知识&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;万有引力&lt;/strong&gt; $\vec F=-\dfrac{GMm}{r^2}\hat r$。其中$\hat r$为以恒星为原点极坐标系中的径向单位向量，在两质点连线上。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;牛顿第二运动定律&lt;/strong&gt; $\vec F=m\vec a=m\dfrac{d^2\vec r}{dt^2}$。其中$\vec r$为位置向量，$\vec r=r\hat r=[r\cos\theta,r\sin\theta]$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;极坐标&lt;/strong&gt;
+$$
+\hat r=[\cos\theta,\sin\theta],\hat\theta=[-\sin\theta,\cos\theta]\newline
+\dot{\hat r}=\frac{d\hat r}{dt}=\dot\theta\hat\theta\newline
+\dot{\hat\theta}=\frac{d\hat\theta}{dt}=-\dot\theta\hat r
+$$&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

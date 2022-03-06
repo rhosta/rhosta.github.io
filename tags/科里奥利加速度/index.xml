@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>科里奥利加速度 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E7%A7%91%E9%87%8C%E5%A5%A5%E5%88%A9%E5%8A%A0%E9%80%9F%E5%BA%A6/</link>
+        <description>Recent content in 科里奥利加速度 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 04 Mar 2022 19:47:01 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E7%A7%91%E9%87%8C%E5%A5%A5%E5%88%A9%E5%8A%A0%E9%80%9F%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在运动的参考系中的运动</title>
+        <link>https://rhosta.github.io/p/%E5%9C%A8%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8F%82%E8%80%83%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8/</link>
+        <pubDate>Fri, 04 Mar 2022 19:47:01 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%9C%A8%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8F%82%E8%80%83%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8/</guid>
+        <description>&lt;h2 id=&#34;1-转动下的基矢导数&#34;&gt;1 转动下的基矢导数&lt;/h2&gt;
+&lt;p&gt;在认识平面极坐标系我们了解到，若引入$\vec\omega=\dot\theta\hat k$，方向依照右手法则，则
+$$
+\dot{\hat r}=\dot\theta\hat\theta=\vec\omega\times\hat r\newline
+\dot{\hat\theta}=-\dot\theta\hat r=\vec\omega\times\hat\theta
+$$
+事实上，若坐标系转动的方向向量为$\vec\omega$，则任一基矢对时间的导数为$\dot{\hat x}=\vec\omega\times\hat x$，此结论在后文将进一步说明。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;角度的无穷小（角速度）改变是矢量&lt;/strong&gt;，符合向量的平行四边形法则。&lt;/p&gt;
+&lt;p&gt;动系相对于静系的旋转角速度记为$\vec\omega=\omega_x\hat x+\omega_y\hat y+\omega_z\hat z$。&lt;/p&gt;
+&lt;h3 id=&#34;11-柱坐标的另一种推导&#34;&gt;1.1 柱坐标的另一种推导&lt;/h3&gt;
+&lt;p&gt;就柱坐标上的正交系而言，$\vec\omega=\vec{\dot\varphi}=\dot\varphi\hat z$，故对基矢求导
+$$
+\dot{\hat\rho}=\vec\omega\times\hat\rho=\dot\varphi\hat\varphi\newline
+\dot{\hat\varphi}=\vec\omega\times\hat\varphi=-\dot\varphi\hat\rho\newline
+\dot{\hat z}=\vec0
+$$&lt;/p&gt;
+&lt;h3 id=&#34;12-球坐标的另一种推导&#34;&gt;1.2 球坐标的另一种推导&lt;/h3&gt;
+&lt;p&gt;就球坐标上的正交系而言，
+$$
+\vec\omega=\vec{\dot\theta}+\vec{\dot\varphi}
+=\dot\theta\hat\varphi+\dot\varphi\hat z\newline
+=\dot\theta\hat\varphi+\dot\varphi(\cos\theta\hat r-\sin\theta\hat\theta)\newline
+=\dot\theta\hat\varphi+\dot\varphi\cos\theta\hat r-\dot\varphi\sin\theta\hat\theta
+$$
+进而基矢导数
+$$
+\dot{\hat r}=\vec\omega\times\hat r=\dot\theta\hat\theta+\dot\varphi\sin\theta\hat\varphi\newline
+\dot{\hat\theta}=\vec\omega\times\hat\theta=-\dot\theta\hat r+\dot\varphi\cos\theta\hat\varphi\newline
+\dot{\hat\varphi}=\vec\omega\times\hat\varphi=-\dot\varphi\cos\theta\hat\theta-\dot\varphi\sin\theta\hat r
+$$&lt;/p&gt;
+&lt;p&gt;速度、加速度分解（再写一遍）&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\vec v
+=&amp;amp;\dot r\hat r+r\dot\theta\hat\theta+r\dot\varphi\sin\theta\hat\varphi\newline
+\vec a
+=&amp;amp;(\ddot r-r\dot\theta^2-r\dot\varphi^2\sin\theta^2)\hat r+\newline
+&amp;amp;(2\dot r\dot\theta+r\ddot\theta-r\dot\varphi^2\sin\theta\cos\theta)\hat\theta+\newline
+&amp;amp;(2\dot r\dot\varphi\sin\theta+2r\dot\theta\dot\varphi\cos\theta+r\ddot\varphi\sin\theta)\hat\varphi
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;2-在运动坐标系中的运动&#34;&gt;2 在运动坐标系中的运动&lt;/h2&gt;
+&lt;p&gt;绝对位矢与相对位矢：$\vec r=\vec r_0+\vec r&#39;$。&lt;/p&gt;
+&lt;h3 id=&#34;21-绝对速度&#34;&gt;2.1 绝对速度&lt;/h3&gt;
+&lt;p&gt;$$
+\vec v=\dot{\vec r}=\dot{\vec r_0}+\dot{\vec r&#39;}\newline
+=\vec v_0+\frac{d}{dt}(x_0\hat i_0+y_0\hat k_0+z_0\hat k_0)\newline
+=\vec v_0+(\dot x_0\hat i_0+\dot y_0\hat k_0+\dot z_0\hat k_0)+(x_0\dot{\hat i_0}+y_0\dot{\hat k_0}+z_0\dot{\hat k_0})\newline
+=\vec v_0+(\dot x_0\hat i_0+\dot y_0\hat k_0+\dot z_0\hat k_0)+(x_0\vec\omega\times\hat i_0+y_0\vec\omega\times\hat k_0+z_0\vec\omega\times\hat k_0)\newline
+=\vec v_0+(\dot x_0\hat i_0+\dot y_0\hat k_0+\dot z_0\hat k_0)+\vec\omega\times\vec r&#39;
+$$
+可以发现，&lt;strong&gt;相对位矢求导不等于相对速度&lt;/strong&gt;，具体的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\vec v_0=\dot{r_0}$ 是平动牵连速度&lt;/li&gt;
+&lt;li&gt;$\vec v&#39;=\dfrac{\tilde d\vec v&#39;}{dt}=(\dot x_0\hat i_0+\dot y_0\hat k_0+\dot z_0\hat k_0)$是相对速度&lt;/li&gt;
+&lt;li&gt;$\vec v_\omega=\vec\omega\times\vec r&#39;$是转动牵连速度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;结论&lt;/strong&gt; 动坐标中的矢量（速度、加速度、力、冲量等）求导：$\dot{\vec G}=\dfrac{\tilde d\vec G}{dt}+\vec\omega\times\vec G$。&lt;/p&gt;
+&lt;h3 id=&#34;22-绝对加速度&#34;&gt;2.2 绝对加速度&lt;/h3&gt;
+&lt;p&gt;$$
+\vec a=\dot{\vec r}=\dot{\vec v_0}+\dot{\vec v&#39;}+\frac{d(\vec\omega\times\vec r&#39;)}{dt}\newline
+=\ddot{\vec r_0}+(\frac{\tilde d}{dt}\vec v&#39;+\vec\omega\times\vec v&#39;)+\dot{\vec\omega}\times\vec r&#39;+\vec\omega\times(\frac{\tilde d}{dt}\vec r&#39;+\vec\omega\times\vec r&#39;)\newline
+=\ddot{\vec r_0}+\frac{\tilde d}{dt}\vec v&#39;+\dot{\vec\omega}\times\vec r&#39;+\vec\omega\times(\vec\omega\times\vec r&#39;)+2\vec\omega\times\vec v&#39;\newline
+$$&lt;/p&gt;
+&lt;p&gt;可以发现，&lt;strong&gt;相对速度求导不等于相对加速度&lt;/strong&gt;，具体的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\vec a_0=\ddot{\vec r_0}$是平动牵连加速度&lt;/li&gt;
+&lt;li&gt;$\vec a&#39;=\dfrac{\tilde d}{dt}\vec v&#39;$是相对加速度&lt;/li&gt;
+&lt;li&gt;$\vec a_\omega=\vec a_r+\vec a_n$，其中
+&lt;ul&gt;
+&lt;li&gt;$\vec a_r=\dot{\vec\omega}\times\vec r&#39;$是切线转动牵连加速度，即角速度改变引起转动牵连速度大小的变化&lt;/li&gt;
+&lt;li&gt;$\vec a_n=\vec\omega\times(\vec\omega\times\vec v&#39;)$是向轴转动牵连加速度，即动系转动引起的转动牵连速度方向的变化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$\vec a_c=2\vec\omega\times\vec v&#39;$是科里奥利加速度，来源于质点相对转动动系的运动。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

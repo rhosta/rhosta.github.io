@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>热学 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/categories/%E7%83%AD%E5%AD%A6/</link>
+        <description>Recent content in 热学 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 13 Feb 2022 13:39:51 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/categories/%E7%83%AD%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>温度、温标、理想气体</title>
+        <link>https://rhosta.github.io/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/</link>
+        <pubDate>Sun, 13 Feb 2022 13:39:51 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/</guid>
+        <description>&lt;h2 id=&#34;1-压强原理&#34;&gt;1 压强原理&lt;/h2&gt;
+&lt;p&gt;压强：反应来源于压力（尤其是重力）的作用效果的物理量，$p=\dfrac NS\quad(\text{unit: Pa}=\text N\cdot\text m^{-2})$。&lt;/p&gt;
+&lt;p&gt;液体压强：均匀液体中压强仅与所在深度有关，与方向、容器无关，$p=\rho gh$，$F\text{浮}=\Delta ps=\rho g\Delta h$。&lt;/p&gt;
+&lt;p&gt;大气压强：与温度、高度相关有关。标准大气压（海拔0，温度0）$1\text{atm}\approx 1.01\times10^5\text{Pa}\approx 760\text{mmHg}$。&lt;/p&gt;
+&lt;p&gt;水银测压计：汞柱（顶部真空）高度数值即大气压强大小。&lt;/p&gt;
+&lt;h2 id=&#34;2-温度温标&#34;&gt;2 温度、温标&lt;/h2&gt;
+&lt;p&gt;热力学第零定律：系统A、B分别与系统C间热平衡，则系统A、B间一定热平衡。&lt;/p&gt;
+&lt;p&gt;温度：反应分子无序运动剧烈程度的物理量。&lt;/p&gt;
+&lt;p&gt;温标：用数值刻画温度大小。&lt;/p&gt;
+&lt;p&gt;温标三要素：测温物质、测温属性、固定点。&lt;/p&gt;
+&lt;p&gt;温标分类：经验温标、理想气体温标、热力学温标、国际实用温标。&lt;/p&gt;
+&lt;p&gt;理想气体温标：&lt;/p&gt;
+&lt;p&gt;$$
+T=\begin{cases}
+\lim_{p_\text{tr}\to0}T(p)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{p}{p_\text{tr}}\newline
+\lim_{p_\text{tr}\to0}T(V)=273.16\text K\lim_{p_\text{tr}\to 0}\dfrac{V}{V_\text{tr}}\newline
+\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;热力学温标：
+$$
+\begin{aligned}
+1\text K&amp;amp;=\dfrac{T\text tr}{273.16}\newline
+t/^\circ\text C&amp;amp;=T/\text K-273.15\approx T/\text K-273\newline
+t_\text F/^\circ\text F&amp;amp;=32+\frac95t/^\circ\text C
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;3-理想气体物态方程&#34;&gt;3 理想气体物态方程&lt;/h2&gt;
+&lt;p&gt;玻意耳-马略特定律：气压趋近于零时，气体相同质量、温度不变时，压强与体积之积为常数。&lt;/p&gt;
+&lt;p&gt;阿伏伽德罗定律：气压趋近于零时，相同气压和温度下$1\text{mol}$任意气体所占体积相同。&lt;/p&gt;
+&lt;p&gt;理想气体物态方程：气压趋近于零时，有
+$$
+pV=vRT=\frac nmRT\quad(\text{unit: J}\cdot\text{mol}^{-1})
+$$
+&lt;em&gt;常使用初末状态方程对应做差的方式解题&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;普适气体常量：
+$$
+\begin{aligned}
+R=&amp;amp;\frac{p_\text{tr}V_{\text m,\text{tr}}}{273.16\text K}T\newline
+\approx&amp;amp;8.31\text J\cdot\text{mol}^{-1}\cdot\text K^{-1}\newline
+\approx&amp;amp;8.20\times10^{-2}\text{atm}\cdot\text L\cdot\text{mol}^{-1}\cdot\text K^{-1}
+\end{aligned}
+$$&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

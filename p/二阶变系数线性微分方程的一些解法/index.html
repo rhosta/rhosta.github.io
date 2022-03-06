@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='变量替换法 欧拉方程 如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$
+$$ a_0x^n\frac{d^ny}{dx^n}&#43;a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}&#43;\cdots&#43;a_{n-1}x\frac{dy}{dx}&#43;a_0y=f(x) $$
+考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则
+$$ \begin{aligned} \frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;amp;=\frac{1}{x}\frac{d}{dt}\newline \frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline &amp;amp;\vdots\newline \frac{d^n}{dx^n}&amp;amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n&#43;1) \end{aligned} $$
+降阶法 解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，已知存在非零解$y_1$。
+$$ \begin{aligned} \text{Set }y&amp;amp;=y_1u\newline \text{Then }y&#39;&amp;amp;=y_1u&#39;&#43;y_1&amp;rsquo;u\newline y&#39;&#39;&amp;amp;=y_1u&#39;&#39;&#43;2y_1&amp;rsquo;u&#39;&#43;y_1&#39;&amp;lsquo;u\newline y_1u&amp;rsquo;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&#43;(y_1&#39;&#39;&#43;py_1&#39;&#43;q)&amp;amp;=0(\star)\newline y_1u&#39;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&amp;amp;=0\newline \text{Set }z&amp;amp;=u&#39;\newline \text{Then }y_1\frac{dz}{dx}&amp;amp;=-(py_1&#43;2\frac{dy_1}{dx})z\newline \frac{dz}{z}&amp;amp;=-2\frac{dy_1}{y_1}-pdx\newline u&#39;=z&amp;amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline u&amp;amp;=C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx} \end{aligned} $$
+刘维尔公式 ：通解为$y=y_1(C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx})$。
+非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。
+某些特殊变系数方程化为常系数方程 构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。
+解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，其中$p(x)&#39;,q(x)$连续，且$p^2&#43;2p-4q$等于常数$a$。
+令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文
+$$ vu&#39;&#39;&#43;(pv&#43;2v&#39;)u&#39;&#43;(v&#39;&#39;&#43;pv&#39;&#43;q)=0\newline vu&#39;&#39;-\frac{a}{4}vu=0 $$
+得到了二阶常系数齐次微分方程$u&#39;&#39;-\frac{a}{4}u=0$。
+常数变易法 解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1&#43;C_2y_2$。
+设方程的一个特解$\widetilde{y}=u_1y_1&#43;u_2y_2$，且令$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=0$，代入原方程有$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=f(x)$，
+联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;amp;y_2\newline y_1&#39;&amp;amp;y_2&#39;\end{matrix}\right|\neq 0$），记作$u_1&#39;=\varphi(x),u_2&#39;=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx&#43;y_2\int\psi(x)dx$。
+幂级数解法 示例：求解$y&#39;&#39;&#43;y=0$。（然而并不变系数）
+设方程的解可展开为幂级数如下，则
+$$ y=a_0&#43;a_1x&#43;\cdots&#43;a_nx_n&#43;\cdots\newline y&#39;=a_1&#43;2a_2x\cdots&#43;(n&#43;1)a_{n&#43;1}x_n&#43;\cdots\newline y&#39;&#39;=2a_2&#43;3\cdot 2a_3x&#43;\cdots&#43;(n&#43;2)(n&#43;1)a_{n&#43;2}x_n&#43;\cdots $$
+代入原方程整理得
+$$ (a_0&#43;2a_2)&#43;(3\cdot 2a_3&#43;a_1)x&#43;(4\cdot 3a_4&#43;a_2)x^2&#43;\cdots=0\newline \Downarrow\newline y=a_0(1-\frac{1}{2!'><title>二阶变系数线性微分方程的一些解法</title>
+
+<link rel='canonical' href='https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/'>
+
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='二阶变系数线性微分方程的一些解法'>
+<meta property='og:description' content='变量替换法 欧拉方程 如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$
+$$ a_0x^n\frac{d^ny}{dx^n}&#43;a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}&#43;\cdots&#43;a_{n-1}x\frac{dy}{dx}&#43;a_0y=f(x) $$
+考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则
+$$ \begin{aligned} \frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;amp;=\frac{1}{x}\frac{d}{dt}\newline \frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline &amp;amp;\vdots\newline \frac{d^n}{dx^n}&amp;amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n&#43;1) \end{aligned} $$
+降阶法 解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，已知存在非零解$y_1$。
+$$ \begin{aligned} \text{Set }y&amp;amp;=y_1u\newline \text{Then }y&#39;&amp;amp;=y_1u&#39;&#43;y_1&amp;rsquo;u\newline y&#39;&#39;&amp;amp;=y_1u&#39;&#39;&#43;2y_1&amp;rsquo;u&#39;&#43;y_1&#39;&amp;lsquo;u\newline y_1u&amp;rsquo;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&#43;(y_1&#39;&#39;&#43;py_1&#39;&#43;q)&amp;amp;=0(\star)\newline y_1u&#39;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&amp;amp;=0\newline \text{Set }z&amp;amp;=u&#39;\newline \text{Then }y_1\frac{dz}{dx}&amp;amp;=-(py_1&#43;2\frac{dy_1}{dx})z\newline \frac{dz}{z}&amp;amp;=-2\frac{dy_1}{y_1}-pdx\newline u&#39;=z&amp;amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline u&amp;amp;=C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx} \end{aligned} $$
+刘维尔公式 ：通解为$y=y_1(C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx})$。
+非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。
+某些特殊变系数方程化为常系数方程 构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。
+解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，其中$p(x)&#39;,q(x)$连续，且$p^2&#43;2p-4q$等于常数$a$。
+令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文
+$$ vu&#39;&#39;&#43;(pv&#43;2v&#39;)u&#39;&#43;(v&#39;&#39;&#43;pv&#39;&#43;q)=0\newline vu&#39;&#39;-\frac{a}{4}vu=0 $$
+得到了二阶常系数齐次微分方程$u&#39;&#39;-\frac{a}{4}u=0$。
+常数变易法 解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1&#43;C_2y_2$。
+设方程的一个特解$\widetilde{y}=u_1y_1&#43;u_2y_2$，且令$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=0$，代入原方程有$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=f(x)$，
+联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;amp;y_2\newline y_1&#39;&amp;amp;y_2&#39;\end{matrix}\right|\neq 0$），记作$u_1&#39;=\varphi(x),u_2&#39;=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx&#43;y_2\int\psi(x)dx$。
+幂级数解法 示例：求解$y&#39;&#39;&#43;y=0$。（然而并不变系数）
+设方程的解可展开为幂级数如下，则
+$$ y=a_0&#43;a_1x&#43;\cdots&#43;a_nx_n&#43;\cdots\newline y&#39;=a_1&#43;2a_2x\cdots&#43;(n&#43;1)a_{n&#43;1}x_n&#43;\cdots\newline y&#39;&#39;=2a_2&#43;3\cdot 2a_3x&#43;\cdots&#43;(n&#43;2)(n&#43;1)a_{n&#43;2}x_n&#43;\cdots $$
+代入原方程整理得
+$$ (a_0&#43;2a_2)&#43;(3\cdot 2a_3&#43;a_1)x&#43;(4\cdot 3a_4&#43;a_2)x^2&#43;\cdots=0\newline \Downarrow\newline y=a_0(1-\frac{1}{2!'>
+<meta property='og:url' content='https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/'>
+<meta property='og:site_name' content='Site of Nosta the altered'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='欧拉方程' /><meta property='article:tag' content='变量替换法' /><meta property='article:tag' content='降阶法' /><meta property='article:tag' content='幂级数解法' /><meta property='article:published_time' content='2022-01-21T13:47:10&#43;00:00'/><meta property='article:modified_time' content='2022-01-21T13:47:10&#43;00:00'/>
+<meta name="twitter:title" content="二阶变系数线性微分方程的一些解法">
+<meta name="twitter:description" content="变量替换法 欧拉方程 如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$
+$$ a_0x^n\frac{d^ny}{dx^n}&#43;a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}&#43;\cdots&#43;a_{n-1}x\frac{dy}{dx}&#43;a_0y=f(x) $$
+考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则
+$$ \begin{aligned} \frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;amp;=\frac{1}{x}\frac{d}{dt}\newline \frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline &amp;amp;\vdots\newline \frac{d^n}{dx^n}&amp;amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n&#43;1) \end{aligned} $$
+降阶法 解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，已知存在非零解$y_1$。
+$$ \begin{aligned} \text{Set }y&amp;amp;=y_1u\newline \text{Then }y&#39;&amp;amp;=y_1u&#39;&#43;y_1&amp;rsquo;u\newline y&#39;&#39;&amp;amp;=y_1u&#39;&#39;&#43;2y_1&amp;rsquo;u&#39;&#43;y_1&#39;&amp;lsquo;u\newline y_1u&amp;rsquo;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&#43;(y_1&#39;&#39;&#43;py_1&#39;&#43;q)&amp;amp;=0(\star)\newline y_1u&#39;&#39;&#43;(py_1&#43;2y_1&#39;)u&#39;&amp;amp;=0\newline \text{Set }z&amp;amp;=u&#39;\newline \text{Then }y_1\frac{dz}{dx}&amp;amp;=-(py_1&#43;2\frac{dy_1}{dx})z\newline \frac{dz}{z}&amp;amp;=-2\frac{dy_1}{y_1}-pdx\newline u&#39;=z&amp;amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline u&amp;amp;=C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx} \end{aligned} $$
+刘维尔公式 ：通解为$y=y_1(C_1&#43;\int\frac{C_2}{y_1^2}e^{-\int pdx})$。
+非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。
+某些特殊变系数方程化为常系数方程 构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。
+解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=0$，其中$p(x)&#39;,q(x)$连续，且$p^2&#43;2p-4q$等于常数$a$。
+令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文
+$$ vu&#39;&#39;&#43;(pv&#43;2v&#39;)u&#39;&#43;(v&#39;&#39;&#43;pv&#39;&#43;q)=0\newline vu&#39;&#39;-\frac{a}{4}vu=0 $$
+得到了二阶常系数齐次微分方程$u&#39;&#39;-\frac{a}{4}u=0$。
+常数变易法 解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}&#43;p(x)\frac{dy}{dx}&#43;q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1&#43;C_2y_2$。
+设方程的一个特解$\widetilde{y}=u_1y_1&#43;u_2y_2$，且令$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=0$，代入原方程有$u_1&amp;rsquo;y_1&#43;u_2&amp;rsquo;y_2=f(x)$，
+联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;amp;y_2\newline y_1&#39;&amp;amp;y_2&#39;\end{matrix}\right|\neq 0$），记作$u_1&#39;=\varphi(x),u_2&#39;=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx&#43;y_2\int\psi(x)dx$。
+幂级数解法 示例：求解$y&#39;&#39;&#43;y=0$。（然而并不变系数）
+设方程的解可展开为幂级数如下，则
+$$ y=a_0&#43;a_1x&#43;\cdots&#43;a_nx_n&#43;\cdots\newline y&#39;=a_1&#43;2a_2x\cdots&#43;(n&#43;1)a_{n&#43;1}x_n&#43;\cdots\newline y&#39;&#39;=2a_2&#43;3\cdot 2a_3x&#43;\cdots&#43;(n&#43;2)(n&#43;1)a_{n&#43;2}x_n&#43;\cdots $$
+代入原方程整理得
+$$ (a_0&#43;2a_2)&#43;(3\cdot 2a_3&#43;a_1)x&#43;(4\cdot 3a_4&#43;a_2)x^2&#43;\cdots=0\newline \Downarrow\newline y=a_0(1-\frac{1}{2!">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hubb9c6dbf30a498d53907e8b9c7b2de8d_30468_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Site of Nosta the altered</a></h1>
+            <h2 class="site-description">El la subtitile.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/rhosta/rhosta.gitHub.io'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:nosta@qq.com'
+                        target="_blank"
+                        title="Mail me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
+                第二学期
+            </a>
+        
+            <a href="/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                常微分方程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/">二阶变系数线性微分方程的一些解法</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 21, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="变量替换法">变量替换法</h2>
+<h3 id="欧拉方程">欧拉方程</h3>
+<p>如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$</p>
+<p>$$
+a_0x^n\frac{d^ny}{dx^n}+a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}x\frac{dy}{dx}+a_0y=f(x)
+$$</p>
+<p>考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则</p>
+<p>$$
+\begin{aligned}
+\frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;=\frac{1}{x}\frac{d}{dt}\newline
+\frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline
+&amp;\vdots\newline
+\frac{d^n}{dx^n}&amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n+1)
+\end{aligned}
+$$</p>
+<h3 id="降阶法">降阶法</h3>
+<p>解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，已知存在非零解$y_1$。</p>
+<p>$$
+\begin{aligned}
+\text{Set }y&amp;=y_1u\newline
+\text{Then }y'&amp;=y_1u'+y_1&rsquo;u\newline
+y''&amp;=y_1u''+2y_1&rsquo;u'+y_1'&lsquo;u\newline
+y_1u&rsquo;'+(py_1+2y_1')u'+(y_1''+py_1'+q)&amp;=0(\star)\newline
+y_1u''+(py_1+2y_1')u'&amp;=0\newline
+\text{Set }z&amp;=u'\newline
+\text{Then }y_1\frac{dz}{dx}&amp;=-(py_1+2\frac{dy_1}{dx})z\newline
+\frac{dz}{z}&amp;=-2\frac{dy_1}{y_1}-pdx\newline
+u'=z&amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline
+u&amp;=C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx}
+\end{aligned}
+$$</p>
+<p><strong>刘维尔公式</strong> ：通解为$y=y_1(C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx})$。</p>
+<p>非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。</p>
+<h3 id="某些特殊变系数方程化为常系数方程">某些特殊变系数方程化为常系数方程</h3>
+<p>构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。</p>
+<p>解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，其中$p(x)',q(x)$连续，且$p^2+2p-4q$等于常数$a$。</p>
+<p>令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文</p>
+<p>$$
+vu''+(pv+2v')u'+(v''+pv'+q)=0\newline
+vu''-\frac{a}{4}vu=0
+$$</p>
+<p>得到了二阶常系数齐次微分方程$u''-\frac{a}{4}u=0$。</p>
+<h2 id="常数变易法">常数变易法</h2>
+<p>解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1+C_2y_2$。</p>
+<p>设方程的一个特解$\widetilde{y}=u_1y_1+u_2y_2$，<strong>且令</strong>$u_1&rsquo;y_1+u_2&rsquo;y_2=0$，代入原方程有$u_1&rsquo;y_1+u_2&rsquo;y_2=f(x)$，</p>
+<p>联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;y_2\newline y_1'&amp;y_2'\end{matrix}\right|\neq 0$），记作$u_1'=\varphi(x),u_2'=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx+y_2\int\psi(x)dx$。</p>
+<h2 id="幂级数解法">幂级数解法</h2>
+<p>示例：求解$y''+y=0$。（然而并不变系数）</p>
+<p>设方程的解可展开为幂级数如下，则</p>
+<p>$$
+y=a_0+a_1x+\cdots+a_nx_n+\cdots\newline
+y'=a_1+2a_2x\cdots+(n+1)a_{n+1}x_n+\cdots\newline
+y''=2a_2+3\cdot 2a_3x+\cdots+(n+2)(n+1)a_{n+2}x_n+\cdots
+$$</p>
+<p>代入原方程整理得</p>
+<p>$$
+(a_0+2a_2)+(3\cdot 2a_3+a_1)x+(4\cdot 3a_4+a_2)x^2+\cdots=0\newline
+\Downarrow\newline
+y=a_0(1-\frac{1}{2!}x^2+\frac{1}{4}x^4-\frac{1}{6!}x^6+\cdots)\newline +a_1(x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7+\cdots)
+$$</p>
+<p>进而$y=a_0\cos x+a_1\sin x$为方程的通解。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B/">欧拉方程</a>
+        
+            <a href="/tags/%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2%E6%B3%95/">变量替换法</a>
+        
+            <a href="/tags/%E9%99%8D%E9%98%B6%E6%B3%95/">降阶法</a>
+        
+            <a href="/tags/%E5%B9%82%E7%BA%A7%E6%95%B0%E8%A7%A3%E6%B3%95/">幂级数解法</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">可降阶的二阶微分方程</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/k1k2%E7%9A%84%E8%AF%81%E6%98%8E%E6%9C%AA%E5%AE%8C%E6%88%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">K1,K2的证明（未完成）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常系数线性微分方程组的解法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微分方程组与线性微分方程组</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二阶常系数线性微分方程</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Site of Nosta the altered
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.9.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#变量替换法">变量替换法</a>
+      <ol>
+        <li><a href="#欧拉方程">欧拉方程</a></li>
+        <li><a href="#降阶法">降阶法</a></li>
+        <li><a href="#某些特殊变系数方程化为常系数方程">某些特殊变系数方程化为常系数方程</a></li>
+      </ol>
+    </li>
+    <li><a href="#常数变易法">常数变易法</a></li>
+    <li><a href="#幂级数解法">幂级数解法</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

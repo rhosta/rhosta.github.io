@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>正交曲线坐标系 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB/</link>
+        <description>Recent content in 正交曲线坐标系 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 25 Feb 2022 18:44:01 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>坐标系与质点运动的矢量描述</title>
+        <link>https://rhosta.github.io/p/%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8E%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E7%9F%A2%E9%87%8F%E6%8F%8F%E8%BF%B0/</link>
+        <pubDate>Fri, 25 Feb 2022 18:44:01 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8E%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E7%9F%A2%E9%87%8F%E6%8F%8F%E8%BF%B0/</guid>
+        <description>&lt;h2 id=&#34;1-基本概念&#34;&gt;1 基本概念&lt;/h2&gt;
+&lt;p&gt;位矢$\vec r$唯一地确定了质点再空间中的位置，含时，即$\vec r=\vec r(t)$。以此为基础，定义位移$\Delta\vec r=\vec(t+\Delta t)-\vec(t)$，平均速度$\bar{\vec v}=\dfrac{\Delta\vec r}{\Delta t}$，速度$\vec v=\dfrac{d\vec r}{dt}\equiv \dot{\vec r}$，加速度$\vec a=\dfrac{d\vec v}{dt}\equiv \ddot{\vec r}$。&lt;/p&gt;
+&lt;p&gt;路程$s$表示质点沿轨迹运动的实际长度，满足$v=\left|\dfrac{d\vec r}{dt}\right|=\dfrac{ds}{dt}$。以此为基础，定义曲率$k=\dfrac{d\theta}{ds}$，曲率半径$\rho=\dfrac{ds}{d\theta}$。&lt;/p&gt;
+&lt;p&gt;用不带标记的字母表述对应矢量的模，且矢量同向的单位矢$\dfrac{\vec a}{a}\equiv \vec e_a={\vec a}^\circ$（偷懒时直接写$\hat a$，&lt;del&gt;我说的&lt;/del&gt;）。基矢的方向规定对应坐标增大的方向。&lt;/p&gt;
+&lt;p&gt;补充矢量微分运算法则：$d(\vec a\cdot\vec b)=d\vec a\cdot\vec b+\vec a\cdot d\vec b$、$d(\vec a\times \vec b)=d\vec a\times\vec b+\vec a\times d\vec b$。&lt;/p&gt;
+&lt;h2 id=&#34;2-自然坐标系&#34;&gt;2 自然坐标系&lt;/h2&gt;
+&lt;p&gt;自然坐标系没有引入坐标变量。&lt;/p&gt;
+&lt;h3 id=&#34;21-平面曲线运动&#34;&gt;2.1 平面曲线运动&lt;/h3&gt;
+&lt;p&gt;基矢：切向$\vec\tau$，法向$\vec n$，及$\hat k\equiv\dfrac{\vec\omega}{\dot\theta}$。&lt;/p&gt;
+&lt;p&gt;速度、加速度分解：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\vec v&amp;amp;=v\vec\tau\newline
+\vec a&amp;amp;=\dot v\vec\tau+v\dot\theta\vec n
+=\dot v\vec\tau+v\frac{d\theta}{ds}\frac{ds}{dt}\vec n
+=\dot v\vec\tau+\frac{v^2}{\rho}\vec n
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;22-空间曲线运动&#34;&gt;2.2 空间曲线运动&lt;/h3&gt;
+&lt;p&gt;基矢：切向$\vec\tau$，主法向$\vec n$，副法向$\vec b=\vec\tau\times\vec n$。&lt;/p&gt;
+&lt;p&gt;速度、加速度分解（每一瞬间是为在密切面内运动）：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\vec v&amp;amp;=v\vec\tau\newline
+\vec a&amp;amp;=\dot v\vec\tau+\frac{v^2}{\rho}\vec n
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;3-平面正交曲线坐标系&#34;&gt;3 平面正交曲线坐标系&lt;/h2&gt;
+&lt;h3 id=&#34;31-平面直角坐标系&#34;&gt;3.1 平面直角坐标系&lt;/h3&gt;
+&lt;p&gt;曲线坐标：$x$，$y$，基矢：$\hat i,\hat j$。&lt;/p&gt;
+&lt;h3 id=&#34;32-平面极坐标系&#34;&gt;3.2 平面极坐标系&lt;/h3&gt;
+&lt;p&gt;曲线坐标：模长$\rho$，极角$\theta$（$x=\rho\cos\theta,y=\rho\sin\theta$）。&lt;/p&gt;
+&lt;p&gt;基矢：径向$\hat r$,横向$\hat\theta$，求导：$\dot{\hat r}=\dot\theta\hat\theta, \dot{\hat\theta}=-\dot\theta\hat r$。&lt;/p&gt;
+&lt;p&gt;位矢、速度、加速度分解：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\vec r&amp;amp;=r{\vec r}^\circ\newline
+\vec v&amp;amp;=\dot r{\vec r}^\circ+r\dot\theta{\vec\theta}^\circ\newline
+\vec a&amp;amp;=(\ddot r-r{\dot\theta}^2){\vec r}^\circ+(2\dot r\dot\theta+r\ddot\theta){\vec\theta}^\circ
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;4-空间正交曲线坐标系&#34;&gt;4 空间正交曲线坐标系&lt;/h2&gt;
+&lt;h3 id=&#34;41-空间直角坐标系&#34;&gt;4.1 空间直角坐标系&lt;/h3&gt;
+&lt;p&gt;曲线坐标：$x$，$y$，$z$。基矢：$\hat i$，$\hat j$，$\hat k$。&lt;/p&gt;
+&lt;h3 id=&#34;42-柱坐标系&#34;&gt;4.2 柱坐标系&lt;/h3&gt;
+&lt;p&gt;曲线坐标：投影模长$\rho$，方向角$\varphi$，高度$z$（$x=\rho\cos\varphi,y=\rho\sin\varphi,z=z$）。&lt;/p&gt;
+&lt;p&gt;坐标变换：
+$$
+\left\{
+\begin{aligned}
+\hat\rho&amp;amp;=\cos\theta\hat i+\sin\theta\hat j\newline
+\hat\theta&amp;amp;=\hat k\times\hat\rho=\cos\theta\hat j-\sin\theta\hat i
+\end{aligned}
+\right.
+\Rightarrow
+\left(\begin{matrix}
+\hat\rho\newline
+\hat\varphi\newline
+\hat k
+\end{matrix}\right)
+=\left(\begin{matrix}
+\cos\varphi&amp;amp; \sin\varphi&amp;amp; 0\newline
+-\sin\varphi&amp;amp; \cos\varphi&amp;amp;0\newline
+0&amp;amp;0&amp;amp;1
+\end{matrix}\right)
+\left(\begin{matrix}
+\hat{i}\newline
+\hat{j}\newline
+\hat{k}
+\end{matrix}\right)
+$$
+正交归一基矢求导：$\dot{\hat\rho}=\dot\varphi\hat\varphi, \dot{\hat\varphi}=-\dot\varphi\hat\rho,\dot{\hat k}=\vec 0$。&lt;/p&gt;
+&lt;p&gt;位矢、速度、加速度分解：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\vec r&amp;amp;=\rho\hat\rho+z\hat k\newline
+\vec v&amp;amp;=\dot\rho\hat\rho+\rho\dot\varphi\hat\varphi+\dot z\hat k\newline
+\vec a&amp;amp;=(\ddot\rho-\rho\dot\varphi^2)\hat\rho+(2\dot\rho\dot\varphi+\rho\ddot\varphi)\hat\varphi+\ddot z\hat k
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;43-球坐标系&#34;&gt;4.3 球坐标系&lt;/h3&gt;
+&lt;p&gt;曲线坐标：距离$r$，极角/余仰角$\theta$，方位角$\varphi$（$x=r\sin\theta\cos\varphi,y=r\sin\theta\sin\varphi,z=r\cos\theta$）。&lt;/p&gt;
+&lt;p&gt;坐标转换（分别投影可得，可参考附录）：
+$$
+\left(\begin{matrix}
+\hat i\newline
+\hat j\newline
+\hat k
+\end{matrix}\right)
+=\left(\begin{matrix}
+\sin\theta\cos\varphi&amp;amp; \cos\theta\cos\varphi&amp;amp; -\sin\varphi\newline
+\sin\theta\sin\varphi&amp;amp; \cos\theta\sin\varphi&amp;amp; \cos\varphi\newline
+\cos\theta&amp;amp; -\sin\theta&amp;amp; 0
+\end{matrix}\right)
+\left(\begin{matrix}
+\hat r\newline
+\hat\theta\newline
+\hat\varphi
+\end{matrix}\right)
+$$
+由转移矩阵的正交性，即
+$$
+\left(\begin{matrix}
+\hat r\newline
+\hat\theta\newline
+\hat\varphi
+\end{matrix}\right)
+=\left(\begin{matrix}
+\sin\theta\cos\varphi&amp;amp; \sin\theta\sin\varphi&amp;amp; \cos\theta\newline
+\cos\theta\cos\varphi&amp;amp; \cos\theta\sin\varphi&amp;amp; -\sin\theta\newline
+-\sin\varphi&amp;amp; \cos\varphi&amp;amp; 0
+\end{matrix}\right)
+\left(\begin{matrix}
+\hat i\newline
+\hat j\newline
+\hat k
+\end{matrix}\right)
+$$
+正交归一基矢求导：
+$$
+\begin{aligned}
+\dot{\hat r}
+&amp;amp;=
+(\dot\theta\cos\theta\cos\varphi-\dot\varphi\sin\theta\sin\varphi)\hat i+(\dot\theta\cos\theta\sin\varphi+\dot\varphi\sin\theta\cos\varphi)\hat j-\dot\theta\sin\theta\hat k\newline
+&amp;amp;=
+\dot\theta(\cos\theta\sin\varphi\hat i+\cos\theta\cos\varphi\hat j-\sin\theta\hat k)+\dot\varphi\sin\theta(-\sin\varphi\hat i+\cos\varphi\hat j)\newline
+&amp;amp;=\dot\theta\hat\theta+\dot\varphi\sin\theta\hat\varphi\newline
+\dot{\hat\theta}
+&amp;amp;=(-\dot\theta\sin\theta\cos\varphi-\dot\varphi\cos\theta\sin\varphi)\hat i+(-\dot\theta\sin\theta\sin\varphi+\dot\varphi\cos\theta\cos\varphi)\hat j-\dot\theta\cos\theta\hat k\newline
+&amp;amp;=-\dot\theta(\sin\theta\cos\varphi\hat i+\sin\theta\sin\varphi\hat j+\cos\theta\hat k)+\dot\varphi\cos\theta(-\sin\varphi\hat i+\cos\varphi\hat j)\newline
+&amp;amp;=-\dot\theta\hat r+\dot\varphi\cos\theta\hat\varphi\newline
+\dot{\hat\varphi}
+&amp;amp;=-\dot\varphi(\cos\varphi\hat i+\sin\varphi\hat j)\newline
+&amp;amp;=-\dot\varphi(\sin\theta\hat r+\cos\theta\hat\theta)
+\end{aligned}
+$$
+&lt;del&gt;奈何，吾算不亦精乎？&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;位矢、速度、加速度分解：
+$$
+\begin{aligned}
+\vec r=&amp;amp;r\hat r\newline
+\vec v=&amp;amp;\dot r\hat r+r\dot\theta\hat\theta+r\dot\varphi\sin\theta\hat\varphi\newline
+\vec a=
+&amp;amp;\ddot r\hat r+\dot r\dot\theta\hat\theta+\dot r\dot\varphi\sin\theta\hat\varphi+\newline
+&amp;amp;\dot r\dot\theta\hat\theta+r\ddot\theta\hat\theta+r\dot\theta(-\dot\theta\hat r+\dot\varphi\cos\theta\hat\varphi)+\newline
+&amp;amp;\dot r\dot\varphi\sin\theta\hat\varphi+r\ddot\varphi\sin\theta\hat\varphi+r\dot\varphi\dot\theta\cos\theta\hat\varphi+r\dot\varphi\sin\theta[-\dot\varphi(\sin\theta\hat r+\cos\theta\hat\theta)]\newline
+= &amp;amp;(\ddot r-r\dot\theta^2-r\dot\varphi^2\sin\theta^2)\hat r+\newline
+&amp;amp;(2\dot r\dot\theta+r\ddot\theta-r\dot\varphi^2\sin\theta\cos\theta)\hat\theta+\newline
+&amp;amp;(2\dot r\dot\varphi\sin\theta+2r\dot\theta\dot\varphi\cos\theta+r\ddot\varphi\sin\theta)\hat\varphi
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

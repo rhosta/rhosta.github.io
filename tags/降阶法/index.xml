@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>降阶法 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E9%99%8D%E9%98%B6%E6%B3%95/</link>
+        <description>Recent content in 降阶法 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 21 Jan 2022 13:47:10 +0000</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E9%99%8D%E9%98%B6%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>二阶变系数线性微分方程的一些解法</title>
+        <link>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/</link>
+        <pubDate>Fri, 21 Jan 2022 13:47:10 +0000</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/</guid>
+        <description>&lt;h2 id=&#34;变量替换法&#34;&gt;变量替换法&lt;/h2&gt;
+&lt;h3 id=&#34;欧拉方程&#34;&gt;欧拉方程&lt;/h3&gt;
+&lt;p&gt;如下的形式的成为欧拉方程，其中$a_0,a_1,\cdots,a_n$为常数，$f(x)$是已知函数，且$a_0\neq 0$&lt;/p&gt;
+&lt;p&gt;$$
+a_0x^n\frac{d^ny}{dx^n}+a_1x^{n-1}\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}x\frac{dy}{dx}+a_0y=f(x)
+$$&lt;/p&gt;
+&lt;p&gt;考虑将其转化为常系数微分方程，则$\frac{d^ny}{dx^n}$中应出现因子$\frac{1}{x^n}$。令$t=\ln|x|$，则&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\frac{d}{dx}=\frac{d}{dt}\frac{dt}{dx}&amp;amp;=\frac{1}{x}\frac{d}{dt}\newline
+\frac{d^2}{dx^2}=\frac{d}{dx}\frac{1}{x}\frac{d}{dt}=\frac{1}{x^2}(\frac{d^2}{dt^2}-\frac{d}{dt})&amp;amp;=\frac{1}{x^2}\frac{d}{dt}(\frac{d}{dt}-1)\newline
+&amp;amp;\vdots\newline
+\frac{d^n}{dx^n}&amp;amp;=\frac{1}{x^n}\frac{d}{dt}(\frac{d}{dt}-1)\cdots(\frac{d}{dt}-n+1)
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;降阶法&#34;&gt;降阶法&lt;/h3&gt;
+&lt;p&gt;解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，已知存在非零解$y_1$。&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\text{Set }y&amp;amp;=y_1u\newline
+\text{Then }y&#39;&amp;amp;=y_1u&#39;+y_1&amp;rsquo;u\newline
+y&#39;&#39;&amp;amp;=y_1u&#39;&#39;+2y_1&amp;rsquo;u&#39;+y_1&#39;&amp;lsquo;u\newline
+y_1u&amp;rsquo;&#39;+(py_1+2y_1&#39;)u&#39;+(y_1&#39;&#39;+py_1&#39;+q)&amp;amp;=0(\star)\newline
+y_1u&#39;&#39;+(py_1+2y_1&#39;)u&#39;&amp;amp;=0\newline
+\text{Set }z&amp;amp;=u&#39;\newline
+\text{Then }y_1\frac{dz}{dx}&amp;amp;=-(py_1+2\frac{dy_1}{dx})z\newline
+\frac{dz}{z}&amp;amp;=-2\frac{dy_1}{y_1}-pdx\newline
+u&#39;=z&amp;amp;=\frac{C_2}{y_1^2}e^{-\int pdx}, C_2\in\mathbb{R}\newline
+u&amp;amp;=C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刘维尔公式&lt;/strong&gt; ：通解为$y=y_1(C_1+\int\frac{C_2}{y_1^2}e^{-\int pdx})$。&lt;/p&gt;
+&lt;p&gt;非齐次情形下，已知对应齐次方程的一个非零解为$y_1$，仍然使用降阶法得到一阶非齐次线性方程求解。&lt;/p&gt;
+&lt;h3 id=&#34;某些特殊变系数方程化为常系数方程&#34;&gt;某些特殊变系数方程化为常系数方程&lt;/h3&gt;
+&lt;p&gt;构造方法：取定式$(\star)$中的第二个括号为零，且第三个括号是“$y_1$”的常数倍。&lt;/p&gt;
+&lt;p&gt;解二阶齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$，其中$p(x)&#39;,q(x)$连续，且$p^2+2p-4q$等于常数$a$。&lt;/p&gt;
+&lt;p&gt;令$y=uv, v=e^{-\int\frac{p}{2}dx}$，由前文&lt;/p&gt;
+&lt;p&gt;$$
+vu&#39;&#39;+(pv+2v&#39;)u&#39;+(v&#39;&#39;+pv&#39;+q)=0\newline
+vu&#39;&#39;-\frac{a}{4}vu=0
+$$&lt;/p&gt;
+&lt;p&gt;得到了二阶常系数齐次微分方程$u&#39;&#39;-\frac{a}{4}u=0$。&lt;/p&gt;
+&lt;h2 id=&#34;常数变易法&#34;&gt;常数变易法&lt;/h2&gt;
+&lt;p&gt;解二阶非齐次变系数微分方程$\frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=f(x)$，已知对应齐次方程通解$Y=C_1y_1+C_2y_2$。&lt;/p&gt;
+&lt;p&gt;设方程的一个特解$\widetilde{y}=u_1y_1+u_2y_2$，&lt;strong&gt;且令&lt;/strong&gt;$u_1&amp;rsquo;y_1+u_2&amp;rsquo;y_2=0$，代入原方程有$u_1&amp;rsquo;y_1+u_2&amp;rsquo;y_2=f(x)$，&lt;/p&gt;
+&lt;p&gt;联立上式有唯一解（朗斯基行列式$\left|\begin{matrix}y_1&amp;amp;y_2\newline y_1&#39;&amp;amp;y_2&#39;\end{matrix}\right|\neq 0$），记作$u_1&#39;=\varphi(x),u_2&#39;=\psi(x)$，故$\widetilde{y}=y_1\int\varphi(x)dx+y_2\int\psi(x)dx$。&lt;/p&gt;
+&lt;h2 id=&#34;幂级数解法&#34;&gt;幂级数解法&lt;/h2&gt;
+&lt;p&gt;示例：求解$y&#39;&#39;+y=0$。（然而并不变系数）&lt;/p&gt;
+&lt;p&gt;设方程的解可展开为幂级数如下，则&lt;/p&gt;
+&lt;p&gt;$$
+y=a_0+a_1x+\cdots+a_nx_n+\cdots\newline
+y&#39;=a_1+2a_2x\cdots+(n+1)a_{n+1}x_n+\cdots\newline
+y&#39;&#39;=2a_2+3\cdot 2a_3x+\cdots+(n+2)(n+1)a_{n+2}x_n+\cdots
+$$&lt;/p&gt;
+&lt;p&gt;代入原方程整理得&lt;/p&gt;
+&lt;p&gt;$$
+(a_0+2a_2)+(3\cdot 2a_3+a_1)x+(4\cdot 3a_4+a_2)x^2+\cdots=0\newline
+\Downarrow\newline
+y=a_0(1-\frac{1}{2!}x^2+\frac{1}{4}x^4-\frac{1}{6!}x^6+\cdots)\newline +a_1(x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7+\cdots)
+$$&lt;/p&gt;
+&lt;p&gt;进而$y=a_0\cos x+a_1\sin x$为方程的通解。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
