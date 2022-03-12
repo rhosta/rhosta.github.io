@@ -1,53 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='$\frac{d^2y}{dx^2}=f(x)$型 解法，连续做两次积分。
-$$ \frac{dy}{dx}=\int f(x)dx&#43;C_1\newline y=\int\left[\int f(x)dx\right]dx&#43;C_1x&#43;C_2 $$
-示例：求解$\frac{d^2y}{dx^2}=\frac{1}{\cos^2x}, y|{x=\frac{\pi}{4}}=\frac{\ln 2}{2}, \frac{dy}{dx}|{x=\frac{\pi}{4}}=1$。
-由$\frac{dy}{dx} =\tan x&#43;C_1,y=-\ln|\cos x|&#43;C_1x&#43;C_2$，带入初值条件，则$C_1=C_2=0$。
-注意，连续求积分过程中每求一次积分即计算出相应待定常数往往能简化运算。
-$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dx}$，方程化为$\frac{dp}{dx}=f(x,p)$，是一阶微分方程。
-示例：求解$(1&#43;x^2)\frac{d^2y}{dx^2}=2x\frac{dy}{dx}$。
-令$p=\frac{dy}{dx}$，方程化为$(1&#43;x^2)\frac{dp}{dx}=2xp$，系可分离变量的一阶微分方程，解为$p=C_1(x^2&#43;1)$，
-则$y=\int pdx=\frac{C_1}{3}x^3&#43;C_1x&#43;C_2$。
-$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dy}\frac{dy}{dx}=p\frac{dp}{dy}$，方程化为$p\frac{dp}{dy}=f(y,p)$，系一阶微分方程。
-示例：求解$\left(\frac{dy}{dx}\right)^2-y\frac{d^2y}{dx^2}=0$。
-令$p=\frac{dy}{dx}$，方程化为$p^2-yp\frac{dp}{dy}=0$，得$p=C_1y(C_1\in\mathbb R)$，
-则$\frac{dy}{y}=C_1dx$，得$y=C_2e^{C_1x}(C_2\in\mathbb R)$。'><title>可降阶的二阶微分方程</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><title>追及问题的运动轨迹</title>
 
-<link rel='canonical' href='https://rhosta.github.io/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/'>
+<link rel='canonical' href='https://rhosta.github.io/p/%E8%BF%BD%E5%8F%8A%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9/'>
 
-<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='可降阶的二阶微分方程'>
-<meta property='og:description' content='$\frac{d^2y}{dx^2}=f(x)$型 解法，连续做两次积分。
-$$ \frac{dy}{dx}=\int f(x)dx&#43;C_1\newline y=\int\left[\int f(x)dx\right]dx&#43;C_1x&#43;C_2 $$
-示例：求解$\frac{d^2y}{dx^2}=\frac{1}{\cos^2x}, y|{x=\frac{\pi}{4}}=\frac{\ln 2}{2}, \frac{dy}{dx}|{x=\frac{\pi}{4}}=1$。
-由$\frac{dy}{dx} =\tan x&#43;C_1,y=-\ln|\cos x|&#43;C_1x&#43;C_2$，带入初值条件，则$C_1=C_2=0$。
-注意，连续求积分过程中每求一次积分即计算出相应待定常数往往能简化运算。
-$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dx}$，方程化为$\frac{dp}{dx}=f(x,p)$，是一阶微分方程。
-示例：求解$(1&#43;x^2)\frac{d^2y}{dx^2}=2x\frac{dy}{dx}$。
-令$p=\frac{dy}{dx}$，方程化为$(1&#43;x^2)\frac{dp}{dx}=2xp$，系可分离变量的一阶微分方程，解为$p=C_1(x^2&#43;1)$，
-则$y=\int pdx=\frac{C_1}{3}x^3&#43;C_1x&#43;C_2$。
-$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dy}\frac{dy}{dx}=p\frac{dp}{dy}$，方程化为$p\frac{dp}{dy}=f(y,p)$，系一阶微分方程。
-示例：求解$\left(\frac{dy}{dx}\right)^2-y\frac{d^2y}{dx^2}=0$。
-令$p=\frac{dy}{dx}$，方程化为$p^2-yp\frac{dp}{dy}=0$，得$p=C_1y(C_1\in\mathbb R)$，
-则$\frac{dy}{y}=C_1dx$，得$y=C_2e^{C_1x}(C_2\in\mathbb R)$。'>
-<meta property='og:url' content='https://rhosta.github.io/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/'>
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='追及问题的运动轨迹'>
+<meta property='og:description' content=''>
+<meta property='og:url' content='https://rhosta.github.io/p/%E8%BF%BD%E5%8F%8A%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9/'>
 <meta property='og:site_name' content='Site of Nosta the altered'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='变量替换法' /><meta property='article:published_time' content='2022-01-20T15:20:09&#43;00:00'/><meta property='article:modified_time' content='2022-01-20T15:20:09&#43;00:00'/>
-<meta name="twitter:title" content="可降阶的二阶微分方程">
-<meta name="twitter:description" content="$\frac{d^2y}{dx^2}=f(x)$型 解法，连续做两次积分。
-$$ \frac{dy}{dx}=\int f(x)dx&#43;C_1\newline y=\int\left[\int f(x)dx\right]dx&#43;C_1x&#43;C_2 $$
-示例：求解$\frac{d^2y}{dx^2}=\frac{1}{\cos^2x}, y|{x=\frac{\pi}{4}}=\frac{\ln 2}{2}, \frac{dy}{dx}|{x=\frac{\pi}{4}}=1$。
-由$\frac{dy}{dx} =\tan x&#43;C_1,y=-\ln|\cos x|&#43;C_1x&#43;C_2$，带入初值条件，则$C_1=C_2=0$。
-注意，连续求积分过程中每求一次积分即计算出相应待定常数往往能简化运算。
-$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dx}$，方程化为$\frac{dp}{dx}=f(x,p)$，是一阶微分方程。
-示例：求解$(1&#43;x^2)\frac{d^2y}{dx^2}=2x\frac{dy}{dx}$。
-令$p=\frac{dy}{dx}$，方程化为$(1&#43;x^2)\frac{dp}{dx}=2xp$，系可分离变量的一阶微分方程，解为$p=C_1(x^2&#43;1)$，
-则$y=\int pdx=\frac{C_1}{3}x^3&#43;C_1x&#43;C_2$。
-$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dy}\frac{dy}{dx}=p\frac{dp}{dy}$，方程化为$p\frac{dp}{dy}=f(y,p)$，系一阶微分方程。
-示例：求解$\left(\frac{dy}{dx}\right)^2-y\frac{d^2y}{dx^2}=0$。
-令$p=\frac{dy}{dx}$，方程化为$p^2-yp\frac{dp}{dy}=0$，得$p=C_1y(C_1\in\mathbb R)$，
-则$\frac{dy}{y}=C_1dx$，得$y=C_2e^{C_1x}(C_2\in\mathbb R)$。">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-07T13:52:14&#43;08:00'/><meta property='article:modified_time' content='2022-03-07T13:52:14&#43;08:00'/>
+<meta name="twitter:title" content="追及问题的运动轨迹">
+<meta name="twitter:description" content="">
     <link rel="shortcut icon" href="img/favicon.ico" />
 
     </head>
@@ -76,7 +40,7 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -248,12 +212,12 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
     
     <header class="article-category">
         
-            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
-                第二学期
+            <a href="/categories/%E5%8A%9B%E5%AD%A6/" style="background-color: #2a9d8f; color: #fff;">
+                力学
             </a>
         
-            <a href="/categories/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
-                常微分方程
+            <a href="/categories/%E7%AC%AC%E4%BA%8C%E5%AD%A6%E6%9C%9F/" >
+                第二学期
             </a>
         
     </header>
@@ -261,7 +225,7 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%8F%AF%E9%99%8D%E9%98%B6%E7%9A%84%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">可降阶的二阶微分方程</a>
+            <a href="/p/%E8%BF%BD%E5%8F%8A%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9/">追及问题的运动轨迹</a>
         </h2>
     
         
@@ -280,7 +244,7 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 20, 2022</time>
+                <time class="article-time--published">Mar 07, 2022</time>
             </div>
         
 
@@ -295,7 +259,7 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    0 minute read
                 </time>
             </div>
         
@@ -309,37 +273,12 @@ $\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x） 变量替换法，令$
     <section class="article-content">
     
     
-    <h2 id="fracd2ydx2fx型">$\frac{d^2y}{dx^2}=f(x)$型</h2>
-<p>解法，连续做两次积分。</p>
-<p>$$
-\frac{dy}{dx}=\int f(x)dx+C_1\newline
-y=\int\left[\int f(x)dx\right]dx+C_1x+C_2
-$$</p>
-<p>示例：求解$\frac{d^2y}{dx^2}=\frac{1}{\cos^2x}, y|<em>{x=\frac{\pi}{4}}=\frac{\ln 2}{2}, \frac{dy}{dx}|</em>{x=\frac{\pi}{4}}=1$。</p>
-<p>由$\frac{dy}{dx} =\tan x+C_1,y=-\ln|\cos x|+C_1x+C_2$，带入初值条件，则$C_1=C_2=0$。</p>
-<p>注意，连续求积分过程中每求一次积分即计算出相应待定常数往往能简化运算。</p>
-<h2 id="fracd2ydx2fxfracdydx型不显含y">$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y）</h2>
-<p>变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dx}$，方程化为$\frac{dp}{dx}=f(x,p)$，是一阶微分方程。</p>
-<p>示例：求解$(1+x^2)\frac{d^2y}{dx^2}=2x\frac{dy}{dx}$。</p>
-<p>令$p=\frac{dy}{dx}$，方程化为$(1+x^2)\frac{dp}{dx}=2xp$，系可分离变量的一阶微分方程，解为$p=C_1(x^2+1)$，</p>
-<p>则$y=\int pdx=\frac{C_1}{3}x^3+C_1x+C_2$。</p>
-<h2 id="fracd2ydx2fyfracdydx型不显含x">$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x）</h2>
-<p>变量替换法，令$\frac{dy}{dx}=p$，则$\frac{d^2y}{dx^2}=\frac{dp}{dy}\frac{dy}{dx}=p\frac{dp}{dy}$，方程化为$p\frac{dp}{dy}=f(y,p)$，系一阶微分方程。</p>
-<p>示例：求解$\left(\frac{dy}{dx}\right)^2-y\frac{d^2y}{dx^2}=0$。</p>
-<p>令$p=\frac{dy}{dx}$，方程化为$p^2-yp\frac{dp}{dy}=0$，得$p=C_1y(C_1\in\mathbb R)$，</p>
-<p>则$\frac{dy}{y}=C_1dx$，得$y=C_2e^{C_1x}(C_2\in\mathbb R)$。</p>
-
+    
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2%E6%B3%95/">变量替换法</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">
@@ -393,24 +332,36 @@ $$</p>
             
                 
 <article class="">
-    <a href="/p/%E9%9A%90%E5%87%BD%E6%95%B0%E7%A1%AE%E5%AE%9A%E7%9A%84%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+    <a href="/p/%E5%9C%A8%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8F%82%E8%80%83%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">隐函数确定的一阶微分方程</h2>
+            <h2 class="article-title">在运动的参考系中的运动</h2>
         </div>
     </a>
 </article>
             
                 
 <article class="">
-    <a href="/p/%E4%BA%8C%E9%98%B6%E5%8F%98%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E6%B3%95/">
+    <a href="/p/%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8E%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E7%9F%A2%E9%87%8F%E6%8F%8F%E8%BF%B0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">二阶变系数线性微分方程的一些解法</h2>
+            <h2 class="article-title">坐标系与质点运动的矢量描述</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/p/%E9%9A%90%E5%87%BD%E6%95%B0%E7%A1%AE%E5%AE%9A%E7%9A%84%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">隐函数确定的一阶微分方程</h2>
         </div>
     </a>
 </article>
@@ -429,24 +380,12 @@ $$</p>
             
                 
 <article class="">
-    <a href="/p/%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E6%B3%95/">
+    <a href="/p/%E6%B8%A9%E5%BA%A6%E6%B8%A9%E6%A0%87%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">常系数线性微分方程组的解法</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="">
-    <a href="/p/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">微分方程组与线性微分方程组</h2>
+            <h2 class="article-title">温度、温标、理想气体</h2>
         </div>
     </a>
 </article>
@@ -597,40 +536,7 @@ $$</p>
             >
 
             </main>
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#fracd2ydx2fx型">$\frac{d^2y}{dx^2}=f(x)$型</a></li>
-    <li><a href="#fracd2ydx2fxfracdydx型不显含y">$\frac{d^2y}{dx^2}=f(x,\frac{dy}{dx})$型（不显含y）</a></li>
-    <li><a href="#fracd2ydx2fyfracdydx型不显含x">$\frac{d^2y}{dx^2}=f(y,\frac{dy}{dx})$型（不显含x）</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
         </div>
         <script 

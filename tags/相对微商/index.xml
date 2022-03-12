@@ -65,7 +65,7 @@ $$&lt;/p&gt;
 $$
 可以发现，&lt;strong&gt;相对位矢求导不等于相对速度&lt;/strong&gt;，具体的&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;$\vec v_0=\dot{r_0}$ 是平动牵连速度&lt;/li&gt;
+&lt;li&gt;$\vec v_0=\dot{\vec r_0}$ 是平动牵连速度&lt;/li&gt;
 &lt;li&gt;$\vec v&#39;=\dfrac{\tilde d\vec v&#39;}{dt}=(\dot x_0\hat i_0+\dot y_0\hat k_0+\dot z_0\hat k_0)$是相对速度&lt;/li&gt;
 &lt;li&gt;$\vec v_\omega=\vec\omega\times\vec r&#39;$是转动牵连速度。&lt;/li&gt;
 &lt;/ul&gt;
@@ -75,6 +75,7 @@ $$
 \vec a=\dot{\vec r}=\dot{\vec v_0}+\dot{\vec v&#39;}+\frac{d(\vec\omega\times\vec r&#39;)}{dt}\newline
 =\ddot{\vec r_0}+(\frac{\tilde d}{dt}\vec v&#39;+\vec\omega\times\vec v&#39;)+\dot{\vec\omega}\times\vec r&#39;+\vec\omega\times(\frac{\tilde d}{dt}\vec r&#39;+\vec\omega\times\vec r&#39;)\newline
 =\ddot{\vec r_0}+\frac{\tilde d}{dt}\vec v&#39;+\dot{\vec\omega}\times\vec r&#39;+\vec\omega\times(\vec\omega\times\vec r&#39;)+2\vec\omega\times\vec v&#39;\newline
+=\ddot{\vec r_0}+\frac{\tilde d}{dt}\vec v&#39;+\dot{\vec\omega}\times\vec r&#39;+\vec\omega\times\vec v_\omega+2\vec\omega\times\vec v&#39;\newline
 $$&lt;/p&gt;
 &lt;p&gt;可以发现，&lt;strong&gt;相对速度求导不等于相对加速度&lt;/strong&gt;，具体的&lt;/p&gt;
 &lt;ul&gt;
@@ -83,7 +84,7 @@ $$&lt;/p&gt;
 &lt;li&gt;$\vec a_\omega=\vec a_r+\vec a_n$，其中
 &lt;ul&gt;
 &lt;li&gt;$\vec a_r=\dot{\vec\omega}\times\vec r&#39;$是切线转动牵连加速度，即角速度改变引起转动牵连速度大小的变化&lt;/li&gt;
-&lt;li&gt;$\vec a_n=\vec\omega\times(\vec\omega\times\vec v&#39;)$是向轴转动牵连加速度，即动系转动引起的转动牵连速度方向的变化。&lt;/li&gt;
+&lt;li&gt;$\vec a_n=\vec\omega\times(\vec\omega\times\vec v&#39;)=\vec\omega\times\vec v_\omega$是向轴转动牵连加速度，即动系转动引起的转动牵连速度方向的变化。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;$\vec a_c=2\vec\omega\times\vec v&#39;$是科里奥利加速度，来源于质点相对转动动系的运动。&lt;/li&gt;

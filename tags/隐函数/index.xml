@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>隐函数 on Site of Nosta the altered</title>
+        <link>https://rhosta.github.io/tags/%E9%9A%90%E5%87%BD%E6%95%B0/</link>
+        <description>Recent content in 隐函数 on Site of Nosta the altered</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 07 Mar 2022 13:36:05 +0800</lastBuildDate><atom:link href="https://rhosta.github.io/tags/%E9%9A%90%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>隐函数确定的一阶微分方程</title>
+        <link>https://rhosta.github.io/p/%E9%9A%90%E5%87%BD%E6%95%B0%E7%A1%AE%E5%AE%9A%E7%9A%84%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</link>
+        <pubDate>Mon, 07 Mar 2022 13:36:05 +0800</pubDate>
+        
+        <guid>https://rhosta.github.io/p/%E9%9A%90%E5%87%BD%E6%95%B0%E7%A1%AE%E5%AE%9A%E7%9A%84%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</guid>
+        <description>&lt;p&gt;隐函数确定的一阶微分方程形如
+$$
+f(x,y)=0\newline
+F(x,y,y&#39;)=0
+$$&lt;/p&gt;
+&lt;p&gt;能直接解出$y&#39;$的情况就不表了。&lt;/p&gt;
+&lt;p&gt;当不能是，与可降阶的微分方程求法类似，解决此类问题需要设置变量替换，其基本思路为，首先从$F(x,y,y&#39;)$中反解得到某个变量关于其他量的显函数关系，而后实用参数变量解决。&lt;/p&gt;
+&lt;p&gt;常见的变量设置：三角函数及其幂次。&lt;/p&gt;
+&lt;p&gt;情形一：
+$$
+F(x,y&#39;)=0, y=y\newline
+x=\varphi(t), y&#39;=\psi(t)\newline
+dx=\varphi&#39;(t)dt=\frac{dy}{\psi(t)}\newline
+y=\int\psi(t)\varphi&#39;(t)dt+C
+$$
+情形二：
+$$
+F(y,y&#39;)=0, x=x\newline
+y=\varphi(t), y&#39;=\psi(t)\newline
+dx=\frac{\varphi&#39;(t)dt}{\psi(t)}\newline
+x=\int \frac{\varphi&#39;(t)}{\psi(t)}dt+C
+$$
+情形三：
+$$
+y=F(x,y&#39;)\newline
+p=y&#39;\newline
+dy=F_xdx+F_pdp=pdx\newline
+\text{if possible}\quad p=p(x, C), y=F(x,p)\newline
+\text{otherwise}\quad G(p,x,C)=0,y=F(x,p)
+$$
+情形四：
+$$
+x=F(y,y&#39;)\newline
+p=y&#39;\newline
+dx=F_ydy+F_pdp=\frac{dy}{p}\newline
+\text{if possible}\quad p=p(y,C), x=F(y,p)\newline
+\text{otherwise}\quad G(p,x,C)=0, x=f(y,p)
+$$
+需要指出，情形三、四中参数若存在其次关系，则可以考虑直接令其比值为变量等情况。即不总是要把$x,y,y&#39;$中的某个或某几个设为变量。&lt;/p&gt;
+&lt;p&gt;实例（克莱罗方程）：
+$$
+y=xy&#39;+\varphi(y&#39;)\
+p=y&#39;\
+dy=pdx+(x+\varphi&#39;(p))dp=pdx\
+(x+\varphi&#39;(p))dp=(x+\varphi&#39;(p))\frac{dp}{dx}=0\
+x+\frac{d\varphi}{dp}=0, \frac{dp}{dx}=0\
+p=p(x),p=C\
+y=xp(x)+\varphi(p(x)), y=Cx+\varphi(C)
+$$&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
